@@ -1,1 +1,1 @@
-#Semarang 24#
+#Semarang 24

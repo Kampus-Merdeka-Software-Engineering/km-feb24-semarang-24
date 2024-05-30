@@ -6,6 +6,11 @@ function ambilDataJSON(callback) {
         .catch(error => console.error('Error:', error));
 }
 
+// Fungsi untuk memfilter data yang tidak valid (yang memiliki dimensi atau metrik "#N/A")
+function filterData(dataPizza) {
+    return dataPizza.filter(pizza => pizza.name !== "#N/A" && pizza.quantity !== "#N/A");
+}
+
 // Fungsi untuk menghitung total quantity pizza
 function hitungTotalQuantity(dataPizza) {
     const totalQuantity = {};
@@ -23,7 +28,8 @@ function hitungTotalQuantity(dataPizza) {
 
 // Fungsi untuk mendapatkan bottom 5 pizza dengan quantity terendah
 function bottom5Pizza(dataPizza) {
-    const totalQuantity = hitungTotalQuantity(dataPizza);
+    const filteredData = filterData(dataPizza);
+    const totalQuantity = hitungTotalQuantity(filteredData);
     const sortedPizzas = Object.entries(totalQuantity).sort((a, b) => a[1] - b[1]);
 
     return sortedPizzas.slice(0, 5).map(pizza => pizza[0]);

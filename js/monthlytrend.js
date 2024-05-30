@@ -15,11 +15,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
             const salesChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                    labels: ['Jan', 'Feb', 'Mar', 'ApR', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                     datasets: [{
-                        label: 'Jumlah Penjualan',
+                        label: 'Total Orders per Month',
                         data: salesPerMonth,
-                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderColor: 'rgba(210, 78, 55, 0.5)',
+                        backgroundColor: 'rgba(210, 78, 55, 1)',
                         borderWidth: 1,
                         fill: false
                     }]

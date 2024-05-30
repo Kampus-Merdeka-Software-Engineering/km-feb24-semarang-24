@@ -41,10 +41,10 @@ function buatGrafik(dataPizza) {
         data: {
             labels: labels,
             datasets: [{
-                label: 'Total Penjualan',
+                label: 'Total Quantity',
                 data: data,
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(210, 78, 55, 1)',
+                borderColor: 'rgba(210, 78, 55, 1)',
                 borderWidth: 1
             }]
         },

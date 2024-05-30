@@ -27,7 +27,7 @@ async function createPieChart() {
   // Mengubah quantity menjadi persentase
   const totalQuantity = Object.values(jumlahKategori).reduce((acc, qty) => acc + qty, 0);
   const persentaseKategori = Object.keys(jumlahKategori).reduce((acc, kategori) => {
-    acc[kategori] = ((jumlahKategori[kategori] / totalQuantity) * 100).toFixed(1);
+    acc[kategori] = Math.round((jumlahKategori[kategori] / totalQuantity) * 100); // Membulatkan persentase
     return acc;
   }, {});
 
@@ -44,7 +44,7 @@ async function createPieChart() {
       labels: labels,
       datasets: [{
         data: dataPoin,
-        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#FFA500'],
+        backgroundColor: ['#D24E37', '#C2564F', '#A85344', '#F18C7D'],
       }]
     },
     options: {

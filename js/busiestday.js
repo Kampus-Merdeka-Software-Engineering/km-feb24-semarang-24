@@ -31,8 +31,8 @@ fetch('data.json')
                 datasets: [{
                     label: 'Sales by Hour',
                     data: salesDataByHour,
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(210, 78, 55, 0.5)',
+                    backgroundColor: 'rgba(210, 78, 55, 1)',
                     borderWidth: 1
                 }]
             },

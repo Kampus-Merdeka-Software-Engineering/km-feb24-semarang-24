@@ -333,3 +333,7 @@ body.color{
         margin-right: 5px;
     }
 }
+
+.hero-text a{
+    color: var(--text-color);
+}

@@ -223,3 +223,10 @@ header h4 {
     height:70px;
     padding-top: -20px;
 }
+
+#logout{
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    margin-left: 10px;
+}

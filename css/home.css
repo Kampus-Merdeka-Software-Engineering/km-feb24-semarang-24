@@ -113,6 +113,13 @@ header{
     margin-left: 10px;
 }
 
+#logout{
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--text-color);
+    margin-left: 10px;
+}
+
 section{
     padding: 0 12%;
 }
@@ -200,25 +207,6 @@ section{
 }
 .box:hover{
     transform: translateY(-5px) scale(1.1);
-}
-
-.down-arrow{
-    position: absolute;
-    bottom: 3.5rem;
-    right: 9%;
-}
-.down-arrow i{
-    padding: 14px;
-    color: var(--text-color);
-    background: var(--text-color);
-    font-size: 25px;
-    border-radius: 3rem;
-    cursor: pointer;
-    transition: all ease .55s;
-}
-.down-arrow i:hover{
-    background: var(--main-color);
-    transform: translateY(5px);
 }
 
 body.color{

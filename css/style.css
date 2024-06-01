@@ -183,6 +183,13 @@ header h4 {
     margin-left: 35px;
 }
 
+#logout{
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    margin-left: 10px;
+}
+
 
 
 

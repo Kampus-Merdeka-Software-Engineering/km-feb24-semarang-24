@@ -12,7 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #cbc9c8;
+    background: #e5e5e5;
 }
 
 .wrapper .title{
@@ -54,6 +54,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.imgBx{
+    background-color: #dfbeae ;
 }
 .imgBx img{
     width: 300px;

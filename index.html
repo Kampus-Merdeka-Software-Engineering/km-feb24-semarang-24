@@ -32,7 +32,7 @@
                 <li><a href="index.html">Statistics</a></li>
                 <li><a href="team.html" target="_blank">Teams</a></li> -->
                 <li><a href="home.html" onclick="loadPage('home.html')">Home</a></li>
-                <li><a href="#sec2" onclick="loadPage('#sec2')">Trends</a></li>
+                <li><a href="index.html" onclick="loadPage('index.html')" style="color: #ffcc00;">Statistics</a></li>
                 <li><a href="team.html" onclick="loadPage('team.html')">About Us</a></li>
                 <li><a href="login.html">
                     <div class="bx bx-log-out" id="logout"></div>
@@ -71,8 +71,8 @@
 
     <div class="sec2">
         <div class="diagram_1">
-            <h3>Busiest Days and Time</h3>
-            <canvas id="salesChart" width="400" height="150"></canvas>
+            <h3>Hourly Trend of Total Orders</h3>
+            <canvas id="hourlychart" width="400" height="150"></canvas>
         </div>
 
         <div class="diagram_2">
@@ -82,7 +82,7 @@
 
         <div class="diagram_3">
             <h3>Daily Trend of Total Orders</h3>
-            <canvas id="dailyChart" width="380" height="150"></canvas>
+            <canvas id="dailychart" width="380" height="150"></canvas>
             <div id="maxSalesDay"></div>
         </div>
     </div>
@@ -90,31 +90,31 @@
     <div class="sec3">
         <div class="diagram_4">
             <h3>Total Quantity by Category</h3>
-            <canvas id="pieChartSaya" width="400" height="400"></canvas>
+            <canvas id="quantitybycat" width="400" height="400"></canvas>
         </div>
 
         <div class="diagram_5">
-            <h3>Sales by Size</h3>
-            <canvas id="salesbySize" width="800" height="400"></canvas>
+            <h3>Total Sales by Size</h3>
+            <canvas id="salesbysize" width="800" height="400"></canvas>
         </div>
 
         <div class="diagram_6">
-            <h3>Top 5 Pizza</h3>
-            <canvas id="top5Chart" width="800" height="400"></canvas>
+            <h3>Top 5 Best Seller Pizza </h3>
+            <canvas id="top5chart" width="800" height="400"></canvas>
         </div>
 
         <div class="diagram_7">
-            <h3>Bottom 5 Pizza</h3>
-            <canvas id="bottom5Chart" width="800" height="400"></canvas>
+            <h3>Bottom 5 Worst Seller Pizza</h3>
+            <canvas id="bottom5chart" width="800" height="400"></canvas>
         </div>
     </div>
 
-    <script src="js/busiestday.js"></script>
-    <script src="js/monthlytrend.js"></script>
+    <script src="js/hourlychart.js"></script>
+    <script src="js/monthlychart.js"></script>
     <script src="js/dailychart.js"></script>
     <script src="js/quantitybycat.js"></script>
-    <script src="js/top5pizza.js"></script>
-    <script src="js/bottom5pizza.js"></script>
+    <script src="js/top5chart.js"></script>
+    <script src="js/bottom5chart.js"></script>
     <script src="js/salesbysize.js"></script>
 
 </body>

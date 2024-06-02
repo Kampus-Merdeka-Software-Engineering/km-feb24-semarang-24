@@ -175,12 +175,42 @@ header h4 {
 }
 
 
-#pieChartSaya {
+#quantitybycat {
     width: 260px;
     height: 260px;
-    padding-bottom: 0px;
+    padding-bottom: 2px;
     padding-top:1px ;
-    margin-left: 35px;
+    margin-left: 32px;
+}
+
+#salesbysize {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#top5chart {
+    margin-left: 15px;
+    margin-right: 10px;
+}
+
+#bottom5chart {
+    margin-left: 15px;
+    margin-right: 10px;
+}
+
+#hourlychart {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+#dailychart {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#monthlychart {
+    margin-left: 20px;
+    margin-right: 10px;
 }
 
 #logout{

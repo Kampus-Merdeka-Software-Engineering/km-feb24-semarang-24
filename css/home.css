@@ -8,9 +8,9 @@
 }
 
 :root{
-    --text-color: #000;
+    --text-color: #50070c;
     --bg-color: #e5e5e5;
-    --main-color: #f29494;
+    --main-color:  #D24E37;
     --second-color: #fff;
     --other-color: #868686;
     --big-font: 5.5rem;
@@ -137,8 +137,8 @@ section{
 .hero-img{
     height: 450px;
     width: 450px;
-    margin
 }
+
 .hero-img img{
     width: 100%;
     height: 100%;
@@ -196,7 +196,6 @@ section{
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 7px;
-
 }
 
 .box h5{

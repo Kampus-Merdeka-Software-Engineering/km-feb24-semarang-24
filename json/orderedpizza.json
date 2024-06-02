@@ -1,0 +1,129 @@
+[{
+  "Pizza_Name": "The Classic Deluxe Pizza",
+  "Total_Order": "2329",
+  "Revenue": "$38,181"
+}, {
+  "Pizza_Name": "The Hawaiian Pizza",
+  "Total_Order": "2280",
+  "Revenue": "$32,273"
+}, {
+  "Pizza_Name": "The Pepperoni Pizza",
+  "Total_Order": "2278",
+  "Revenue": "$30,162"
+}, {
+  "Pizza_Name": "The Barbecue Chicken Pizza",
+  "Total_Order": "2273",
+  "Revenue": "$42,768"
+}, {
+  "Pizza_Name": "The Thai Chicken Pizza",
+  "Total_Order": "2225",
+  "Revenue": "$43,434"
+}, {
+  "Pizza_Name": "The California Chicken Pizza",
+  "Total_Order": "2197",
+  "Revenue": "$41,410"
+}, {
+  "Pizza_Name": "The Southwest Chicken Pizza",
+  "Total_Order": "1825",
+  "Revenue": "$34,706"
+}, {
+  "Pizza_Name": "The Spicy Italian Pizza",
+  "Total_Order": "1822",
+  "Revenue": "$34,831"
+}, {
+  "Pizza_Name": "The Sicilian Pizza",
+  "Total_Order": "1820",
+  "Revenue": "$30,941"
+}, {
+  "Pizza_Name": "The Big Meat Pizza",
+  "Total_Order": "1811",
+  "Revenue": "$22,968"
+}, {
+  "Pizza_Name": "The Four Cheese Pizza",
+  "Total_Order": "1809",
+  "Revenue": "$32,266"
+}, {
+  "Pizza_Name": "The Italian Supreme Pizza",
+  "Total_Order": "1791",
+  "Revenue": "$33,477"
+}, {
+  "Pizza_Name": "The Vegetables + Vegetables Pizza",
+  "Total_Order": "1463",
+  "Revenue": "$24,375"
+}, {
+  "Pizza_Name": "The Mexicana Pizza",
+  "Total_Order": "1426",
+  "Revenue": "$26,781"
+}, {
+  "Pizza_Name": "The Napolitana Pizza",
+  "Total_Order": "1421",
+  "Revenue": "$24,087"
+}, {
+  "Pizza_Name": "The Spinach and Feta Pizza",
+  "Total_Order": "1402",
+  "Revenue": "$23,271"
+}, {
+  "Pizza_Name": "The Prosciutto and Arugula Pizza",
+  "Total_Order": "1398",
+  "Revenue": "$24,193"
+}, {
+  "Pizza_Name": "The Pepper Salami Pizza",
+  "Total_Order": "1383",
+  "Revenue": "$25,529"
+}, {
+  "Pizza_Name": "The Italian Capocollo Pizza",
+  "Total_Order": "1380",
+  "Revenue": "$25,094"
+}, {
+  "Pizza_Name": "The Greek Pizza",
+  "Total_Order": "1361",
+  "Revenue": "$28,454"
+}, {
+  "Pizza_Name": "The Five Cheese Pizza",
+  "Total_Order": "1359",
+  "Revenue": "$26,067"
+}, {
+  "Pizza_Name": "The Pepperoni, Mushroom, and Peppers Pizza",
+  "Total_Order": "1316",
+  "Revenue": "$18,835"
+}, {
+  "Pizza_Name": "The Green Garden Pizza",
+  "Total_Order": "976",
+  "Revenue": "$13,956"
+}, {
+  "Pizza_Name": "The Chicken Alfredo Pizza",
+  "Total_Order": "967",
+  "Revenue": "$16,900"
+}, {
+  "Pizza_Name": "The Italian Vegetables Pizza",
+  "Total_Order": "952",
+  "Revenue": "$16,019"
+}, {
+  "Pizza_Name": "The Spinach Pesto Pizza",
+  "Total_Order": "945",
+  "Revenue": "$15,596"
+}, {
+  "Pizza_Name": "The Soppressata Pizza",
+  "Total_Order": "941",
+  "Revenue": "$16,426"
+}, {
+  "Pizza_Name": "The Chicken Pesto Pizza",
+  "Total_Order": "938",
+  "Revenue": "$16,702"
+}, {
+  "Pizza_Name": "The Spinach Supreme Pizza",
+  "Total_Order": "918",
+  "Revenue": "$15,278"
+}, {
+  "Pizza_Name": "The Calabrese Pizza",
+  "Total_Order": "918",
+  "Revenue": "$15,934"
+}, {
+  "Pizza_Name": "The Mediterranean Pizza",
+  "Total_Order": "912",
+  "Revenue": "$15,361"
+}, {
+  "Pizza_Name": "The Brie Carre Pizza",
+  "Total_Order": "480",
+  "Revenue": "$11,588"
+}]

@@ -13,7 +13,7 @@ const salesData = {
 const daysOfWeek = Object.keys(salesData);
 
 // Ambil data dari JSON atau sumber data lainnya
-fetch('data.json')
+fetch('json/data.json')
   .then(response => response.json())
   .then(data => {
     data.forEach(order => {
@@ -27,14 +27,14 @@ fetch('data.json')
 
 // Fungsi untuk mengupdate chart
 function updateChart() {
-  const ctx = document.getElementById('dailyChart').getContext('2d');
+  const ctx = document.getElementById('dailychart').getContext('2d');
 
   const salesChart = new Chart(ctx, {
     type: 'bar',
     data: {
       labels: daysOfWeek,
       datasets: [{
-        label: 'Total Orders per Hour',
+        label: 'Total Orders per Day',
         data: Object.values(salesData),
         backgroundColor: [
           'rgba(210, 78, 55, 1)',
@@ -58,9 +58,14 @@ function updateChart() {
       }]
     },
     options: {
+      plugins: {
+        legend: { display: false }
+      },
       scales: {
         y: {
-          beginAtZero: true
+          beginAtZero: true,
+          min: 0, // Set minimum value for y-axis
+          max: 8500 // Set maximum value for y-axis (adjust as needed)
         }
       }
     }

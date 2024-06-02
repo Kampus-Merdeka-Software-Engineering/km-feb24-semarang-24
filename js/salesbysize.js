@@ -1,50 +1,51 @@
-// Fungsi untuk memuat data dari file JSON dan membuat chart
-async function loadAndCreateChart() {
-    try {
-      const response = await fetch('data.JSON');
-      const data = await response.json();
-  
-      // Menghitung total quantity untuk setiap ukuran pizza
-      const sizeQuantities = data.reduce((acc, order) => {
-        if (acc[order.size]) {
-          acc[order.size] += parseInt(order.quantity, 10);
-        } else {
-          acc[order.size] = parseInt(order.quantity, 10);
-        }
-        return acc;
-      }, {});
-  
-      // Mengonversi objek menjadi array
-      const sizeData = Object.entries(sizeQuantities)
-        .map(([size, total_quantity]) => ({ size, total_quantity }));
-  
-      // Membuat chart
-      const ctx = document.getElementById('salesbySize').getContext('2d');
-      const sizeChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: sizeData.map(data => data.size),
-          datasets: [{
-            label: 'Total Quantity',
-            data: sizeData.map(data => data.total_quantity),
-            backgroundColor: 'rgba(210, 78, 55, 1)',
-            borderColor: 'rgba(210, 78, 55, 1)',
-            borderWidth: 1
-          }]
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        }
-      });
-    } catch (error) {
-      console.error('Error loading or processing data:', error);
-    }
-  }
-  
-  // Panggil fungsi untuk memuat data dan membuat chart
-  loadAndCreateChart();
-  
+document.addEventListener('DOMContentLoaded', () => {
+  // Fetch data from JSON file
+  fetch('json/data.json')
+      .then(response => response.json())
+      .then(data => {
+          // Menghitung total order berdasarkan ukuran
+          const ordersBySize = data.reduce((acc, order) => {
+              const size = order.size;
+              const quantity = parseInt(order.quantity); // Mengonversi quantity ke tipe data integer
+              if (!acc[size]) {
+                  acc[size] = 0;
+              }
+              acc[size] += quantity;
+              return acc;
+          }, {});
+
+          // Mengurutkan berdasarkan jumlah order terbanyak
+          const sortedSizes = Object.keys(ordersBySize).sort((a, b) => ordersBySize[b] - ordersBySize[a]);
+
+          // Membuat data terurut
+          const sortedOrdersData = sortedSizes.map(size => ordersBySize[size]);
+
+          // Membuat label terurut
+          const sortedLabels = sortedSizes;
+
+          // Membuat bar chart menggunakan Chart.js
+          const ctx = document.getElementById('salesbysize').getContext('2d');
+          new Chart(ctx, {
+              type: 'bar',
+              data: {
+                  labels: sortedLabels,
+                  datasets: [{
+                      label: 'Total Orders',
+                      data: sortedOrdersData,
+                      backgroundColor: 'rgba(210, 78, 55, 1)',
+                      borderColor: 'rgba(210, 78, 55, 1)',
+                      borderWidth: 1
+                  }]
+              },
+              options: {
+                  plugins: {legend: {display: false}},
+                  scales: {
+                      y: {
+                          beginAtZero: true
+                      }
+                  }
+              }
+          });
+      })
+      .catch(error => console.error('Error fetching the data:', error));
+});

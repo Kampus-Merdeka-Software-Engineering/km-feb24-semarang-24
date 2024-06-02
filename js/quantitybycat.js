@@ -1,6 +1,6 @@
 // Fungsi untuk memuat data dari file JSON
 async function loadData() {
-  const response = await fetch('data.json');
+  const response = await fetch('/json/data.json');
   const data = await response.json();
   return data;
 }
@@ -37,7 +37,7 @@ async function createPieChart() {
   const dataPersentase = labels.map(kategori => persentaseKategori[kategori]);
 
   // Membuat pie chart
-  const ctx = document.getElementById('pieChartSaya').getContext('2d');
+  const ctx = document.getElementById('quantitybycat').getContext('2d');
   const pieChartSaya = new Chart(ctx, {
     type: 'pie',
     data: {

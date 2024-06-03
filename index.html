@@ -45,7 +45,66 @@
             <a href="team.html" target="_blank"><h4>Team 24 - Semarang</h4></a>
             <a href="team.html" target="_blank"><h4>About Us</h4></a>
         </div> -->
-    </header>
+    </header> <br><br>
+
+    <!-- Filter Category-->
+    <div class="chart-container-filter">
+        <div class="form-group">
+            <label for="categoryFilter">Category </label>
+            <div class="selectBox">
+                <select id="categoryFilter">
+                    <option style="display: none;">All</option>
+                    <option value="all">All</option>
+                    <option value="Classic">Classic</option>
+                    <option value="Supreme">Supreme</option>
+                    <option value="Veggie">Veggie</option>
+                    <option value="Chicken">Chicken</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Filter Pizza Name -->
+    <div class="form-group">
+        <label for="pizzaSelect">Pizza Name</label>
+        <div class="selectBox">
+          <select id="pizzaSelect">
+            <option value="all">All</option>
+            <!-- <option style="display:">Pizza Name</option> -->
+          </select>
+        </div>
+      </div>
+
+      <!-- Filter Pizza Size -->
+      <div class="form-group">
+        <label for="pizzaSizeSelect">Pizza Size</label>
+        <div class="selectBox">
+          <select id="pizzaSizeSelect">
+            <option style="display:none">All</option>
+            <option value="all">All</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+        </div>
+      </div> 
+
+      <!-- Filter Tanggal -->
+      <div class="form-group">
+        <label for="start-date">Start Date</label>
+        <input type="date" id="start-date" min="2015-01-01" max="2015-12-31">
+      </div>
+      <div class="form-group">
+        <label for="end-date">End Date</label>
+        <input type="date" id="end-date" min="2015-01-01" max="2015-12-31">
+      </div>
+      <div class="form-group">
+        <label for=""></label>
+        <button id="applyFilters">OK</button>
+      </div>
+    </div>
+    <br><br>
 
     <div class="sec1">
         <div class="total_sales">
@@ -116,7 +175,28 @@
     <script src="js/top5chart.js"></script>
     <script src="js/bottom5chart.js"></script>
     <script src="js/salesbysize.js"></script>
+    <script src="js/pizzaname.js"></script>
 
+    <!-- JS select-box -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const selectBoxes = document.querySelectorAll('.select-box');
+            selectBoxes.forEach(box => {
+                const selected = box.querySelector('.select-box-selected');
+                selected.addEventListener('click', () => {
+                    box.classList.toggle('open');
+                });
+            });
+
+            document.addEventListener('click', (event) => {
+                selectBoxes.forEach(box => {
+                    if (!box.contains(event.target)) {
+                        box.classList.remove('open');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

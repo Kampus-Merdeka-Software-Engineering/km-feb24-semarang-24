@@ -221,6 +221,92 @@ header h4 {
 }
 
 
+/* FILTER */
+.chart-container-filter {
+    justify-content: center;
+    display: flex;
+}
+#categoryFilter {
+    height: 2rem;
+    width: 9rem; /* Use rem for consistency */
+  }
+  
+  #pizzaSelect {
+    height: 2rem;
+    width: 20rem; /* Use rem for consistency */
+  }
+  
+  #pizzaSizeSelect {
+    height: 2rem;
+    width: 10rem; /* Use rem for consistency */
+  }
+
+  #monthSelect {
+    height: 2rem;
+    width: 10rem; /* Use rem for consistency */
+  }
+  
+   #start-date {
+    height: 2rem;
+    width: 10rem; /* Use rem for consistency */
+    border-radius: 5px;
+  }
+  
+  #end-date {
+    height: 2rem;
+    width: 10rem; /* Use rem for consistency */
+    border-radius: 7px;
+  } 
+
+  
+
+  #filter-button {
+    background: #030037;
+    color: white;
+    width: 2.3rem; /* Use rem for consistency */
+    height: 2.3rem; /* Use rem for consistency */
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 1.7rem; /* Use rem for consistency */
+  }
+  
+  #filter-button:hover {
+    background: #050061;
+  }
+  
+  .selectBox select:focus {
+    outline: none;
+  }
+
+  .form-group {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 0.5rem; /* Use rem for consistency */
+    margin-top: -1.5rem; /* Use rem for consistency */
+  } 
+
+  .form-group button {
+    margin-top: 18px;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: auto; /* Use rem for consistency */
+    font-size: 18px; 
+    font-weight: bold;
+    margin-left: 0.1rem; /* Use rem for consistency */
+  }
+  
+  .form-group:last-child {
+    margin-right: 0;
+  }
+
+
+
 
 
 

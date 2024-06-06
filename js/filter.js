@@ -175,16 +175,11 @@ function filterData(selectedFilters) {
 }
 
 function displayData(data) {
-  // Total Pizzas Sold = sum(Quantity)
+  // Total Pizza = sum(Quantity)
   let pizzaSold = 0;
-  // if (data.length > 0) {
-  //   pizzaSold = data.reduce((acc, item) => {
-  //     return acc + parseInt(item["Quantity"]);
-  //   }, 0);
   if (data.length > 0) {
     pizzaSold = data.reduce((acc, item) => {
-      const price = parseFloat(item["Order ID"].replace("$", ""));
-      return acc + price * item["Quantity"];
+      return acc + parseInt(item["Quantity"]);
     }, 0);
   }
 
@@ -195,9 +190,10 @@ function displayData(data) {
       const price = parseFloat(item["Price"].replace("$", ""));
       return acc + price * item["Quantity"];
     }, 0);
-  }
+    totalSales = Math.floor(totalSales);
+  }  
 
-  // TOTAL ORDER = count_distinct(Order_id)
+  // Num of Order = count_distinct(Order_id)
   let numOrders = 0;
   if (data.length > 0) {
     const orderIds = data.map((item) => item["Order ID"]);
@@ -208,18 +204,17 @@ function displayData(data) {
   // AVG Sales = price * quantity / count_distinct(Order_id)
   let averageSales = 0;
   if (numOrders > 0) {
-    averageSales = totalSales / numOrders;
-  }
+    averageSales = (totalSales / numOrders).toFixed(2);
+  }  
   
-
   document.querySelector(".total-sales h1").textContent = `$${totalSales.toLocaleString()}`;
   document.querySelector(".num-of-orders h1").textContent = `${numOrders.toLocaleString()}`;
   document.querySelector(".average-sales h1").textContent = `$${averageSales.toLocaleString()}`;
-  document.querySelector(".pizza-sold h1").textContent = `${numOrders.toLocaleString()}`;
+  document.querySelector(".pizza-sold h1").textContent = `${pizzaSold.toLocaleString()}`;
 
   // Update chart
   createSalesSizeChart(data);
-  createAveragePurchasedPriceChart(data);
+  // createAveragePurchasedPriceChart(data);
   createDailyTrendChart(data);
   createTop5BestSellingPizzaTypeChart(data);
   createTop5LeastSellingPizzaTypeChart(data);
@@ -238,6 +233,12 @@ function createSalesSizeChart(data) {
   }
 
   const pizzaSizes = [...new Set(data.map((item) => item.Size))];
+
+  pizzaSizes.sort((a, b) => {
+    const totalSalesA = data.filter((item) => item.Size === a).reduce((total, item) => total + parseInt(item.Quantity), 0);
+    const totalSalesB = data.filter((item) => item.Size === b).reduce((total, item) => total + parseInt(item.Quantity), 0);
+    return totalSalesB - totalSalesA; // Urutkan dari yang tertinggi ke terendah
+  });
   const sizeSales = pizzaSizes.map((size) => {
     return data.filter((item) => item.Size === size).reduce((total, item) => total + parseInt(item.Quantity), 0);
   });
@@ -387,8 +388,8 @@ function createQuantityCategoryChart(data) {
               const label = context.label || "";
               const value = context.raw || 0;
               const total = context.dataset.data.reduce((sum, val) => sum + val, 0);
-              const percentage = ((value / total) * 100).toFixed(2);
-              return `${label}: ${value.toFixed(2)} (${percentage}%)`;
+              const percentage = ((value / total) * 100).toFixed(1);
+              return `${label}: ${value.toFixed()} (${percentage}%)`;
             },
           },
         },
@@ -396,7 +397,7 @@ function createQuantityCategoryChart(data) {
           display: true,
           formatter: (value, context) => {
             const total = context.chart.data.datasets[0].data.reduce((sum, val) => sum + val, 0);
-            const percentage = ((value / total) * 100).toFixed(2);
+            const percentage = ((value / total) * 100).toFixed(1);
             return `${percentage}%`;
           },
           color: "#fff",
@@ -415,136 +416,6 @@ function createQuantityCategoryChart(data) {
   quantityCategory.update();
 }
 
-
-// ===============================AVERAGE==================
-let averagePurchasedPriceChart;
-function createAveragePurchasedPriceChart(data) {
-  const ctx = document.getElementById("averagePurchasedPriceChart").getContext("2d");
-
-  if (averagePurchasedPriceChart) {
-    averagePurchasedPriceChart.destroy();
-  }
-
-  const priceRanges = {
-    "$9.75 - $13.99": { min: 9.75, max: 13.99 },
-    "$14 - $17.99": { min: 14, max: 17.99 },
-    "$18 - $21.99": { min: 18, max: 21.99 },
-    "$22 - $25.50": { min: 22, max: 25.5 },
-  };
-
-  const rangeQuantities = {
-    "$9.75 - $13.99": 0,
-    "$14 - $17.99": 0,
-    "$18 - $21.99": 0,
-    "$22 - $25.50": 0,
-  };
-
-  data.forEach((item) => {
-    const price = parseFloat(item["Price"].replace("$", ""));
-    for (const range in priceRanges) {
-      if (price >= priceRanges[range].min && price <= priceRanges[range].max) {
-        rangeQuantities[range] += item.Quantity;
-        break;
-      }
-    }
-  });
-
-  const labels = Object.keys(rangeQuantities);
-  const quantities = Object.values(rangeQuantities);
-
-  // Hapus kategori 'Other' jika tidak ada nilai di dalamnya
-  const otherIndex = labels.indexOf("Other");
-  if (otherIndex !== -1 && quantities[otherIndex] === 0) {
-    labels.splice(otherIndex, 1);
-    quantities.splice(otherIndex, 1);
-  }
-
-  let tickColor = "#000";
-  if (document.body.classList.contains("dark")) {
-    tickColor = "#fff";
-  }
-
-  averagePurchasedPriceChart = new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: labels,
-      datasets: [
-        {
-          label: "Quantity",
-          data: quantities,
-          backgroundColor: 
-          [
-                      'rgba(210, 78, 55, 1)',
-                      'rgba(168, 83, 68, 1)',
-                      'rgba(168, 83, 68, 1)',
-                      'rgba(184, 87, 67, 1)',
-                      'rgba(219, 104, 86, 1)',
-                      'rgba(229, 116, 104, 1)',
-                      'rgba(241, 140, 125, 1)'
-                    ],
-          borderRadius: 1,
-          borderSkipped: false,
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      animation: {
-        duration: 1000,
-        easing: "easeInOutQuad",
-      },
-      plugins: {
-        legend: {
-          display: false,
-        },
-        tooltip: {
-          callbacks: {
-            label: function (context) {
-              return `${context.label}: ${context.raw.toLocaleString()}`;
-            },
-          },
-        },
-        datalabels: {
-          color: "#fff",
-          anchor: "center",
-          align: "center",
-          formatter: function (value) {
-            return value.toLocaleString();
-          },
-          font: {
-            weight: "bold",
-          },
-        },
-      },
-      scales: {
-        x: {
-          ticks: {
-            color: tickColor, 
-          },
-          grid: {
-            display: false,
-          },
-        },
-        y: {
-          ticks: {
-            stepSize: 5000,
-            beginAtZero: true,
-            color: tickColor,
-            callback: function (value) {
-              return value.toLocaleString();
-            },
-          },
-          grid: {
-            display: false, 
-          },
-        },
-      },
-    },
-    plugins: [ChartDataLabels],
-  });
-}
-
 // ===============================HOURLY=====================
 let hourlyTrend;
 function createHourlyTrendChart(data) {
@@ -556,17 +427,17 @@ function createHourlyTrendChart(data) {
 
   // Process data to get daily sales trend
   const dailySales = data.reduce((acc, item) => {
-    const day = item["Hour"];
+    const hour = parseInt(item["Hour"], 10); // Convert hour to integer
     const price = parseFloat(item["Quantity"].replace("$", ""));
-    if (!acc[day]) {
-      acc[day] = 0;
+    if (!acc[hour]) {
+      acc[hour] = 0;
     }
-    acc[day] += price;
+    acc[hour] += price;
     return acc;
   }, {});
 
-  const labels = Object.keys(dailySales).sort();
-  const sales = labels.map((day) => dailySales[day]);
+  const labels = Object.keys(dailySales).sort((a, b) => a - b); // Sort keys numerically
+  const sales = labels.map((hour) => dailySales[hour]);
 
   let tickColor = "#000";
   if (document.body.classList.contains("dark")) {
@@ -608,10 +479,6 @@ function createHourlyTrendChart(data) {
             label: function (context) {
               return `${context.label}: ${Math.round(context.raw).toLocaleString()}`;
             },
-            // label: function (context) {
-            //   const value = Math.round(context.raw || 0).toLocaleString();
-            //   return `${value}`;
-            // },
           },
         },
         datalabels: {
@@ -621,7 +488,6 @@ function createHourlyTrendChart(data) {
           formatter: function (value) {
             return `${Math.round(value).toLocaleString()}`;
           },
-          // formatter: (value) => `${Math.round(value).toLocaleString()}`,
           font: {
             weight: "bold",
           },
@@ -655,6 +521,7 @@ function createHourlyTrendChart(data) {
   });
 }
 
+
 // =====================MONTHLY=============================
 let monthlyTrend;
 function createMonthlyTrendChart(data) {
@@ -664,19 +531,40 @@ function createMonthlyTrendChart(data) {
     monthlyTrend.destroy();
   }
 
-  // Process data to get daily sales trend
-  const dailySales = data.reduce((acc, item) => {
-    const day = item["Month"];
-    const price = parseFloat(item["Quantity"].replace("$", ""));
-    if (!acc[day]) {
-      acc[day] = 0;
+  // Define the order of the months with abbreviated names
+  const monthOrder = [
+    { full: "January", short: "Jan" },
+    { full: "February", short: "Feb" },
+    { full: "March", short: "Mar" },
+    { full: "April", short: "Apr" },
+    { full: "May", short: "May" },
+    { full: "June", short: "Jun" },
+    { full: "July", short: "Jul" },
+    { full: "August", short: "Aug" },
+    { full: "September", short: "Sep" },
+    { full: "October", short: "Oct" },
+    { full: "November", short: "Nov" },
+    { full: "December", short: "Dec" },
+  ];
+
+  // Process data to get monthly sales trend
+  const monthlySales = data.reduce((acc, item) => {
+    const month = item["Month"];
+    const quantity = parseFloat(item["Quantity"].replace("$", ""));
+    if (!acc[month]) {
+      acc[month] = 0;
     }
-    acc[day] += price;
+    acc[month] += quantity;
     return acc;
   }, {});
 
-  const labels = Object.keys(dailySales).sort();
-  const sales = labels.map((day) => dailySales[day]);
+  // Sort the labels according to the predefined order of months
+  const labels = monthOrder
+    .filter(monthObj => monthlySales.hasOwnProperty(monthObj.full))
+    .map(monthObj => monthObj.short);
+  const sales = monthOrder
+    .filter(monthObj => monthlySales.hasOwnProperty(monthObj.full))
+    .map(monthObj => monthlySales[monthObj.full]);
 
   let tickColor = "#000";
   if (document.body.classList.contains("dark")) {
@@ -718,10 +606,6 @@ function createMonthlyTrendChart(data) {
             label: function (context) {
               return `${context.label}: ${Math.round(context.raw).toLocaleString()}`;
             },
-            // label: function (context) {
-            //   const value = Math.round(context.raw || 0).toLocaleString();
-            //   return `${value}`;
-            // },
           },
         },
         datalabels: {
@@ -731,7 +615,6 @@ function createMonthlyTrendChart(data) {
           formatter: function (value) {
             return `${Math.round(value).toLocaleString()}`;
           },
-          // formatter: (value) => `${Math.round(value).toLocaleString()}`,
           font: {
             weight: "bold",
           },
@@ -748,8 +631,10 @@ function createMonthlyTrendChart(data) {
         },
         y: {
           ticks: {
-            stepSize: 50000,
-            beginAtZero: true,
+            stepSize: 500,
+            beginAtZero: false,
+            min: 3000,
+            max: 4500,
             color: tickColor,
             callback: function (value) {
               return `${value.toLocaleString()}`;
@@ -766,7 +651,6 @@ function createMonthlyTrendChart(data) {
 }
 
 // ==============DAILY============================
-
 let dailyPizzaSalesTrendChart;
 function createDailyTrendChart(data) {
   const ctx = document.getElementById("dailyPizzaSalesTrendChart").getContext("2d");
@@ -786,7 +670,9 @@ function createDailyTrendChart(data) {
     return acc;
   }, {});
 
-  const labels = Object.keys(dailySales).sort();
+  // Ensure labels start from Sunday
+  const daysOrder = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const labels = daysOrder.filter(day => dailySales.hasOwnProperty(day));
   const sales = labels.map((day) => dailySales[day]);
 
   let tickColor = "#000";
@@ -804,24 +690,24 @@ function createDailyTrendChart(data) {
           data: sales,
           backgroundColor: 
           [
-                      'rgba(210, 78, 55, 1)',
-                      'rgba(168, 83, 68, 1)',
-                      'rgba(168, 83, 68, 1)',
-                      'rgba(184, 87, 67, 1)',
-                      'rgba(219, 104, 86, 1)',
-                      'rgba(229, 116, 104, 1)',
-                      'rgba(241, 140, 125, 1)'
-                    ],
+            'rgba(210, 78, 55, 1)',
+            'rgba(168, 83, 68, 1)',
+            'rgba(168, 83, 68, 1)',
+            'rgba(184, 87, 67, 1)',
+            'rgba(219, 104, 86, 1)',
+            'rgba(229, 116, 104, 1)',
+            'rgba(241, 140, 125, 1)'
+          ],
           borderColor: 
           [
-                      'rgba(210, 78, 55, 1)',
-                      'rgba(168, 83, 68, 1)',
-                      'rgba(168, 83, 68, 1)',
-                      'rgba(184, 87, 67, 1)',
-                      'rgba(219, 104, 86, 1)',
-                      'rgba(229, 116, 104, 1)',
-                      'rgba(241, 140, 125, 1)'
-                    ],
+            'rgba(210, 78, 55, 1)',
+            'rgba(168, 83, 68, 1)',
+            'rgba(168, 83, 68, 1)',
+            'rgba(184, 87, 67, 1)',
+            'rgba(219, 104, 86, 1)',
+            'rgba(229, 116, 104, 1)',
+            'rgba(241, 140, 125, 1)'
+          ],
           borderWidth: 1,
           fill: true,
         },
@@ -847,20 +733,15 @@ function createDailyTrendChart(data) {
             label: function (context) {
               return `${context.label}: ${Math.round(context.raw).toLocaleString()}`;
             },
-            // label: function (context) {
-            //   const value = Math.round(context.raw || 0).toLocaleString();
-            //   return `${value}`;
-            // },
           },
         },
         datalabels: {
-          color: tickColor,
-          anchor: "start",
+          color: "#fff",
+          anchor: "end",
           align: "start",
           formatter: function (value) {
             return `${Math.round(value).toLocaleString()}`;
           },
-          // formatter: (value) => `${Math.round(value).toLocaleString()}`,
           font: {
             weight: "bold",
           },
@@ -1003,6 +884,7 @@ function createTop5BestSellingPizzaTypeChart(data) {
   });
 }
 
+//BOTTOM
 let top5LeastSellingPizzaTypeChart;
 function createTop5LeastSellingPizzaTypeChart(data) {
   const ctx = document.getElementById("top5LeastSellingPizzaTypeChart").getContext("2d");
@@ -1013,7 +895,7 @@ function createTop5LeastSellingPizzaTypeChart(data) {
 
   const pizzaTypes = [...new Set(data.map((item) => item["Pizza ID"]))];
   const typeSales = pizzaTypes.map((type) => {
-    return data.filter((item) => item["Pizza ID"] === type).reduce((total, item) => total + parseFloat(item["Price"].replace("$", "")) * item["Quantity"], 0);
+    return data.filter((item) => item["Pizza ID"] === type).reduce((total, item) => total + parseInt(item["Quantity"]), 0);
   });
 
   const top5Data = pizzaTypes
@@ -1037,16 +919,15 @@ function createTop5LeastSellingPizzaTypeChart(data) {
         {
           label: "Total Sales",
           data: top5Sales,
-          backgroundColor: 
-          [
-                      'rgba(210, 78, 55, 1)',
-                      'rgba(168, 83, 68, 1)',
-                      'rgba(168, 83, 68, 1)',
-                      'rgba(184, 87, 67, 1)',
-                      'rgba(219, 104, 86, 1)',
-                      'rgba(229, 116, 104, 1)',
-                      'rgba(241, 140, 125, 1)'
-                    ],
+          backgroundColor: [
+            'rgba(210, 78, 55, 1)',
+            'rgba(168, 83, 68, 1)',
+            'rgba(168, 83, 68, 1)',
+            'rgba(184, 87, 67, 1)',
+            'rgba(219, 104, 86, 1)',
+            'rgba(229, 116, 104, 1)',
+            'rgba(241, 140, 125, 1)'
+          ],
           borderRadius: 2,
           borderSkipped: false,
         },
@@ -1072,11 +953,8 @@ function createTop5LeastSellingPizzaTypeChart(data) {
         y: {
           beginAtZero: true,
           ticks: {
-            stepSize: 5000,
+            stepSize: 1,
             color: tickColor,
-            callback: function (value) {
-              return value.toLocaleString();
-            },
           },
           grid: {
             display: false,

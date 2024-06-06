@@ -1,202 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pizza Sales Team 24 - Dashboard</title>
+        <!-- Link Data Tabels -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
+        <!-- Link Icon -->
+        <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/style.css">
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Pizzas</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
-
-    <!-- boxicons link -->
-    <link rel="stylesheet" href="http://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <!-- Ini adalah Library Untuk Membuat Chart -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Untuk menambahkan label persentase di dalam pie chart -->
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-    <script src="https://cdn.jsdelivr.net/npm/moment"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
-</head>
-
-<body>
-
-    <header>
-        <div class="logojudul-kiri">
-            <img class="logo" src="img/pizza.png" alt="Logo Pizza">
-            <h1>PIZZA PLACE SALES REPORT</h1>
-        </div>
-        <nav>
-            <ul>
-                <!-- <li><a href="home.html" target="_blank">Home</a></li>
-                <li><a href="#sec2">Trends</a></li>
-                <li><a href="index.html">Statistics</a></li>
-                <li><a href="team.html" target="_blank">Teams</a></li> -->
-                <li><a href="home.html" onclick="loadPage('home.html')">Home</a></li>
-                <li><a href="index.html" onclick="loadPage('index.html')" style="color: #ffcc00;">Statistics</a></li>
-                <li><a href="team.html" onclick="loadPage('team.html')">About Us</a></li>
-                <li><a href="login.html">
-                    <div class="bx bx-log-out" id="logout"></div>
-                </a></li>
-            </ul>
-        </nav>
-
-        <!-- <div class="team">
-            <img class="profil" src="https://logos-world.net/wp-content/uploads/2021/10/Pizza-Hut-Logo-2014-2019.png" alt="Logo Profil">
-            <a href="team.html" target="_blank"><h4>Team 24 - Semarang</h4></a>
-            <a href="team.html" target="_blank"><h4>About Us</h4></a>
-        </div> -->
-    </header> <br><br>
-
-    <!-- Filter Category-->
-    <div class="chart-container-filter">
-        <div class="form-group">
-            <label for="categoryFilter">Category </label>
-            <div class="selectBox">
-                <select id="categoryFilter">
-                    <option style="display: none;">All</option>
-                    <option value="all">All</option>
-                    <option value="Classic">Classic</option>
-                    <option value="Supreme">Supreme</option>
-                    <option value="Veggie">Veggie</option>
-                    <option value="Chicken">Chicken</option>
-                </select>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div class="logojudul-kiri">
+                <img class="logo" src="img/pizza.png" alt="Logo Pizza">
+                <h1>PIZZA PLACE SALES REPORT</h1>
             </div>
-        </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html" onclick="loadPage('home.html')">Home</a></li>
+                    <li><a href="index.html" onclick="loadPage('index.html')">Statistics</a></li>
+                    <li><a href="team.html" onclick="loadPage('team.html')" style="color: #ffcc00;">About Us</a></li>
+                    <li><a href="login.html">
+                        <div class="bx bx-log-out" id="logout"></div>
+                    </a></li>
+                </ul>
+            </nav>
+        </header>
 
-        <!-- Filter Pizza Name -->
-    <div class="form-group">
-        <label for="pizzaSelect">Pizza Name</label>
-        <div class="selectBox">
-          <select id="pizzaSelect">
-            <option value="all">All</option>
-            <!-- <option style="display:">Pizza Name</option> -->
-          </select>
-        </div>
-      </div>
+        <!-- SECTION -->
+        <main class="container-dashboard">
+            <div class="dash-header">
+                <h1 class="content-text" data-aos="fade-down" data-aos-duration="1500">Dashboard</h1>
 
-      <!-- Filter Pizza Size -->
-      <div class="form-group">
-        <label for="pizzaSizeSelect">Pizza Size</label>
-        <div class="selectBox">
-          <select id="pizzaSizeSelect">
-            <option style="display:none">All</option>
-            <option value="all">All</option>
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
-            <option value="XXL">XXL</option>
-          </select>
-        </div>
-      </div> 
+                <form action="js/barufilter.js" class="select">
+                    <div class="select-dropdown">
+                        <div class="select-btn btn1" data-aos="fade-down" data-aos-duration="1500">
+                            <span class="btn-text">Pizza Type</span>
+                            <span class="arrow-dwn">
+                                <i class="bx bx-chevron-up"></i>
+                            </span>
+                        </div>
+                        <ul class="list-items pizza-type"></ul>
+                    </div>
+                    <div class="select-dropdown">
+                        <div class="select-btn btn2" data-aos="fade-down" data-aos-duration="1500">
+                            <span class="btn-text">Category</span>
+                            <span class="arrow-dwn">
+                                <i class="bx bx-chevron-up"></i>
+                            </span>
+                        </div>
+                        <ul class="list-items pizza-category"></ul>
+                    </div>
+                    <div class="select-dropdown">
+                        <div class="select-btn btn3" data-aos="fade-down" data-aos-duration="1500">
+                            <span class="btn-text">Size</span>
+                            <span class="arrow-dwn">
+                                <i class="bx bx-chevron-up"></i>
+                            </span>
+                        </div>
+                        <ul class="list-items pizza-size"></ul>
+                    </div>
+                </form>
+            </div>
 
-      <!-- Filter Tanggal -->
-      <div class="form-group">
-        <label for="start-date">Start Date</label>
-        <input type="date" id="start-date" min="2015-01-01" max="2015-12-31">
-      </div>
-      <div class="form-group">
-        <label for="end-date">End Date</label>
-        <input type="date" id="end-date" min="2015-01-01" max="2015-12-31">
-      </div>
-      <div class="form-group">
-        <label for=""></label>
-        <button id="applyFilters">OK</button>
-      </div>
-    </div>
-    <br><br>
+            <!-- SECTION analys -->
+            <section>
+                <div class="analys">
+                  <div class="analys-sales" data-aos="fade-down" data-aos-duration="1500">
+                    <div class="sales-text total-sales" data-aos="zoom-in" data-aos-duration="1500">
+                      <h3>Total Sales</h3>
+                      <h1 class="counting">$0</h1>
+                    </div>
+                    <div class="sales-icon">
+                      <i class="bx bx-wallet"></i>
+                    </div>
+                  </div>
+                  <div class="analys-sales" data-aos="fade-down" data-aos-duration="1500">
+                    <div class="sales-text average-sales">
+                      <h3>Avg Order Value</h3>
+                      <h1 class="counting">$0</h1>
+                    </div>
+                    <div class="sales-icon">
+                      <i class="bx bx-coin-stack"></i>
+                    </div>
+                  </div>
+                  <div class="analys-sales" data-aos="fade-down" data-aos-duration="1500">
+                    <div class="sales-text num-of-orders">
+                      <h3>Total Order</h3>
+                      <h1 class="counting">0</h1>
+                    </div>
+                    <div class="sales-icon">
+                      <i class="bx bx-cart"></i>
+                    </div>
+                  </div>
+                  <div class="analys-sales" data-aos="fade-down" data-aos-duration="1500">
+                    <div class="sales-text pizza-sold">
+                      <h3>Total Pizza Sold</h3>
+                      <h1 class="counting">0</h1>
+                    </div>
+                    <div class="sales-icon">
+                      <i class="bx bx-notepad"></i>
+                    </div>
+                  </div>
+                </div>
+              </section>
+        
+              <section class="dashboard">
+                <div class="chart">
+                    <div class="chart-item" data-aos="fade-up" data-aos-duration="1500">
+                        <div class="chart-text">
+                          <p>HOURLY TREND OF TOTAL ORDERS</p>
+                        </div>
+                        <div class="chart-img">
+                          <canvas id="hourlyTrend"></canvas>
+                        </div>
+                      </div>
+                      <div class="chart-item" data-aos="fade-up" data-aos-duration="1500">
+                        <div class="chart-text">
+                          <p>MONTHLY TREND OF TOTAL ORDERS</p>
+                        </div>
+                        <div class="chart-img">
+                          <canvas id="monthlyTrend"></canvas>
+                        </div>
+                      </div>
+                      <div class="chart-item" data-aos="fade-up" data-aos-duration="1500">
+                        <div class="chart-text">
+                          <p>TOTAL SALES BY SIZE</p>
+                        </div>
+                        <div class="chart-img">
+                          <canvas id="bestSellingPizzaSizeChart"></canvas>
+                        </div>
+                      </div>
+                      <div class="chart-item" data-aos="fade-up" data-aos-duration="1500">
+                        <div class="chart-text">
+                          <p>TOTAL QUANTITY BY CATEGORY</p>
+                        </div>
+                        <div class="chart-img">
+                          <canvas id="quantityCategory"></canvas>
+                        </div>
+                      </div>
+                      <div class="chart-item" data-aos="fade-up" data-aos-duration="1500">
+                        <div class="chart-text">
+                          <p>DAILY TREND OF TOTAL ORDERS</p>
+                        </div>
+                        <div class="chart-img">
+                          <canvas id="dailyPizzaSalesTrendChart"></canvas>
+                        </div>
+                      </div>
+                  <div class="chart-item" data-aos="fade-up" data-aos-duration="1500">
+                    <div class="chart-text">
+                      <p>TOP 5 BEST SELLING PIZZA TYPE</p>
+                    </div>
+                    <div class="chart-img">
+                      <canvas id="top5BestSellingPizzaTypeChart"></canvas>
+                    </div>
+                  </div>
+                  <div class="chart-item" data-aos="fade-up" data-aos-duration="1500">
+                    <div class="chart-text"> 
+                      <p>TOP 5 LEAST SELLING PIZZA TYPE</p>
+                    </div>
+                    <div class="chart-img">
+                      <canvas id="top5LeastSellingPizzaTypeChart"></canvas>
+                    </div>
+                  </div>
+                  <div class="chart-item" data-aos="fade-up" data-aos-duration="1500">
+                    <div class="chart-text">
+                      <p>AVERAGE PURCHASED PRICE</p>
+                    </div>
+                    <div class="chart-img">
+                      <canvas id="averagePurchasedPriceChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="table" data-aos="fade-up" data-aos-duration="1500">
+                  <div class="table-header">
+                    <h3>BEST SELLING PIZZA</h3>
+                  </div>
+                  <table class="content-table display">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Pizza Name</th>
+                        <th>Sum of Price</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </section>
+            </main>
 
-    <div class="sec1">
-        <div class="total_sales">
-            <h3>Total Sales</h3>
-            <h1>$817860</h1>
-        </div>
+        <footer>
+            <div class="footer-card">
+                <h3>
+                    2024 MSIB RevoU - <span><a href="https">Semarang Team 24</a></span>
+                </h3>
+            </div>
+        </footer>
 
-        <div class="avg_order_value">
-            <h3>Avg Order Value</h3>
-            <h1>38,31</h1>
-        </div>
-
-        <div class="total_order">
-            <h3>Total Order</h3>
-            <h1>21.350</h1>
-        </div>
-
-        <div class="total_pizza_sold">
-            <h3>Total Pizza Sold</h3>
-            <h1>49.574</h1>
-        </div>
-    </div>
-
-    <div class="sec2">
-        <div class="diagram_1">
-            <h3>Hourly Trend of Total Orders</h3>
-            <canvas id="hourlychart" width="400" height="150"></canvas>
-        </div>
-
-        <div class="diagram_2">
-            <h3>Monthly Trend of Total Orders</h3>
-            <canvas id="monthlychart" width="400" height="150"></canvas>
-        </div>
-
-        <div class="diagram_3">
-            <h3>Daily Trend of Total Orders</h3>
-            <canvas id="dailychart" width="380" height="150"></canvas>
-            <div id="maxSalesDay"></div>
-        </div>
-    </div>
-
-    <div class="sec3">
-        <div class="diagram_4">
-            <h3>Total Quantity by Category</h3>
-            <canvas id="quantitybycat" width="400" height="400"></canvas>
-        </div>
-
-        <div class="diagram_5">
-            <h3>Total Sales by Size</h3>
-            <canvas id="salesbysize" width="800" height="400"></canvas>
-        </div>
-
-        <div class="diagram_6">
-            <h3>Top 5 Best Seller Pizza </h3>
-            <canvas id="top5chart" width="800" height="400"></canvas>
-        </div>
-
-        <div class="diagram_7">
-            <h3>Bottom 5 Worst Seller Pizza</h3>
-            <canvas id="bottom5chart" width="800" height="400"></canvas>
-        </div>
-    </div>
-
-    <script src="js/hourlychart.js"></script>
-    <script src="js/monthlychart.js"></script>
-    <script src="js/dailychart.js"></script>
-    <script src="js/quantitybycat.js"></script>
-    <script src="js/top5chart.js"></script>
-    <script src="js/bottom5chart.js"></script>
-    <script src="js/salesbysize.js"></script>
-    <script src="js/pizzaname.js"></script>
-
-    <!-- JS select-box -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const selectBoxes = document.querySelectorAll('.select-box');
-            selectBoxes.forEach(box => {
-                const selected = box.querySelector('.select-box-selected');
-                selected.addEventListener('click', () => {
-                    box.classList.toggle('open');
-                });
-            });
-
-            document.addEventListener('click', (event) => {
-                selectBoxes.forEach(box => {
-                    if (!box.contains(event.target)) {
-                        box.classList.remove('open');
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-
+        <!-- JS -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+        <script src="js/filter.js"></script>
+        <script>
+    </body>
 </html>

@@ -1,9 +1,7 @@
-body {
-    margin: 0;
-    padding-top: 100px; 
-    background-color: #dfbeae;
+.body{
+    font-family: 'Poppins', sans-serif;
 }
-
+/* HEADER */
 header{
     position:fixed;
     font-family: 'Poppins', sans-serif;
@@ -31,8 +29,8 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
-    margin-left: 20px;
+    display: flex;
+    margin-right: 25px;
 }
 
 nav ul li a {
@@ -49,14 +47,15 @@ nav ul li a:hover {
 div.team {
     display: flex;
     justify-content: space-between;
-    margin: 0 20px 0 0;
+    margin: -20px 20px 0 0;
+    
 }
 
 header h1 {
     color: #ffffff;
     font-size: 25px;
     margin-left: 20px;
-    padding-top: 15px;
+    padding-top: 20px;
     margin-right: 0px;
     white-space: nowrap; /* Hindari pemutusan teks saat layar terlalu kecil */
 }
@@ -74,8 +73,8 @@ header h4 {
 }
 
 .logo {
-    width: 70px;
-    height:70px;
+    width: 65px;
+    height:65px;
     padding-left:20px ;
     padding-top: 15px;
 }
@@ -83,236 +82,500 @@ header h4 {
 .profil {
     width: 100px;
     height:70px;
-    padding-top: 15px;
-}
-
-.sec1 {
-    font-family: 'poppins', sans-serif;
-    display: flex;
-    text-align: center; 
-    justify-content: center; /*menengahkan semua content yang terdapat disuatu div*/
-    flex-wrap: wrap; /*ini salah satu style responsive, kalau gamuat bisa kebawah elemennya*/
-}
-
-.sec1 h3 {
-    margin-bottom: -20px;
-}
-
-.sec1 h1 {
-    margin-top: 15px;
-    font-family: 'poppins', sans-serif;
-    font-weight: 100;
-    color: #D24E37;
-
-}
-
-.total_sales, .avg_order_value, .total_order, .total_pizza_sold{
-    background-color: #ffffff;
-    width: 220px;
-    height: 100px;
-    text-align: center;
-    border-radius: 20px;
-    margin-top: 10px;
-    margin-left: 10px;
-}
-
-.sec2 {
-    font-family: 'poppins', sans-serif;
-    display: flex; 
-    /* flex-wrap: wrap; */
-}
-
-.diagram_1 {
-    background-color: #ffffff;
-    width: 490px;
-    height: 260px;
-    text-align: center;
-    border-radius: 20px;
-    margin-top: 10px;
-    margin-left: 15px;  
-}
-
-.diagram_2, .diagram_3 {
-    background-color: #ffffff;
-    width: 490px;
-    height: 260px;
-    text-align: center;
-    border-radius: 20px; /*biar backgroundnya bulet*/
-    margin-top: 10px;
-    margin-left: 10px;  
-}
-
-.sec3{
-    font-family: 'poppins', sans-serif;
-    display: flex; /*menampilkan elemen ke kanan */
-    margin-bottom: 50px;
-    /* flex-wrap: wrap; */
-}
-
-.diagram_4 {
-    background-color: #ffffff;
-    width: 365px;
-    height: 260px;
-    text-align: center;
-    border-radius: 20px;
-    margin-top: 10px;
-    margin-left: 15px;  
-}
-
-.diagram_5, .diagram_6, .diagram_7 {
-    background-color: #ffffff;
-    width: 365px;
-    height: 260px;
-    text-align: center;
-    border-radius: 20px;
-    margin-top: 10px;
-    margin-left: 10px;  
-}
-
-.diagram_4 h3 {
-    padding-bottom: 0px;
-    margin-bottom: -30px;
-}
-
-
-#quantitybycat {
-    width: 260px;
-    height: 260px;
-    padding-bottom: 2px;
-    padding-top:1px ;
-    margin-left: 32px;
-}
-
-#salesbysize {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-#top5chart {
-    margin-left: 15px;
-    margin-right: 10px;
-}
-
-#bottom5chart {
-    margin-left: 15px;
-    margin-right: 10px;
-}
-
-#hourlychart {
-    margin-left: 20px;
-    margin-right: 10px;
-}
-
-#dailychart {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-#monthlychart {
-    margin-left: 20px;
-    margin-right: 10px;
+    padding-top: -20px;
 }
 
 #logout{
     font-size: 30px;
     cursor: pointer;
     color: white;
-    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: auto;
 }
 
 
-/* FILTER */
-.chart-container-filter {
-    justify-content: center;
+.container-dashboard {
+    margin-top: 110px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* SIDEBAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+  }
+  
+  :root {
+    /* ===== Color ===== */
+    --body-color: #e4e9f7;
+    --toggle-color: #fff;
+    --darkmode: #0075ff;
+    --text-color: #000;
+    --card-filter: #fff;
+    --card-color: #fff;
+    --hover-color: #e4e9f7;
+    --table: rgba(132, 139, 200, 0.18);
+    --table-input: #001838;
+  
+    /* ====== Transition ====== */
+    --tran-02: all 0.1s ease;
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+  }
+  
+  body {
+    min-height: 100vh;
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+  }
+  
+  body.dark {
+    --body-color: #001838;
+    --toggle-color: #fff;
+    --darkmode: #fff;
+    --text-color: #fff;
+    --card-filter: #947f5d;
+    --card-color: #2c2f38;
+    --hover-color: #2c2f38;
+    --color: rgba(0, 0, 0, 0.4);;
+    --table-input: #bfbfbf;
+  }
+  
+  .container-dashboard {
+    height: 100%;
+    width: 100%;
+    padding: 20px 15px 20px 90px;
+  }
+  
+  /* ========== Dashboard Header ========== */
+  /* ========== Dashboard Header ========== */
+  .container-dashboard header {
     display: flex;
-}
-#categoryFilter {
-    height: 2rem;
-    width: 9rem; /* Use rem for consistency */
+    justify-content: space-between;
   }
-  
-  #pizzaSelect {
-    height: 2rem;
-    width: 20rem; /* Use rem for consistency */
+  header .content-text {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-color);
   }
-  
-  #pizzaSizeSelect {
-    height: 2rem;
-    width: 10rem; /* Use rem for consistency */
+  .select {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 6px;
   }
-
-  #monthSelect {
-    height: 2rem;
-    width: 10rem; /* Use rem for consistency */
-  }
-  
-   #start-date {
-    height: 2rem;
-    width: 10rem; /* Use rem for consistency */
+  .select-dropdown .select-btn {
+    display: flex;
+    height: 40px;
+    width: 150px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px; 
     border-radius: 5px;
-  }
-  
-  #end-date {
-    height: 2rem;
-    width: 10rem; /* Use rem for consistency */
-    border-radius: 7px;
-  } 
-
-  
-
-  #filter-button {
-    background: #030037;
-    color: white;
-    width: 2.3rem; /* Use rem for consistency */
-    height: 2.3rem; /* Use rem for consistency */
-    border-radius: 10px;
     cursor: pointer;
-    margin-top: 1.7rem; /* Use rem for consistency */
+    background-color: var(--card-filter);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   }
-  
-  #filter-button:hover {
-    background: #050061;
+  .select-btn .btn-text {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-color);
   }
-  
-  .selectBox select:focus {
-    outline: none;
+  .select-btn .arrow-dwn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-size: 1.3rem;
+    transition: var(--tran-03);
   }
-
-  .form-group {
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 0.5rem; /* Use rem for consistency */
-    margin-top: -1.5rem; /* Use rem for consistency */
-  } 
-
-  .form-group button {
-    margin-top: 18px;
-    height: 2.5rem;
-    width: 2.5rem;
-    border-radius: 10px;
-    font-weight: bold;
+  .select-btn.open-list .arrow-dwn {
+    transform: rotate(180deg);
   }
-  
-  .form-group label {
+  .select-btn.open-list ~ .list-items {
     display: block;
-    margin-bottom: auto; /* Use rem for consistency */
-    font-size: 18px; 
-    font-weight: bold;
-    margin-left: 0.1rem; /* Use rem for consistency */
+  }
+  .select .list-items {
+    position: absolute;
+    width: 150px;
+    max-height: 0;
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 0 5px;
+    background-color: var(--card-filter);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    overflow-y: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    z-index: 100 !important;
+    overflow-y: scroll;
   }
   
-  .form-group:last-child {
-    margin-right: 0;
+  .select-btn.open-list ~ .list-items {
+    max-height: 285px;
+    opacity: 1;
+    /* padding: 5px; */
   }
-
-
-
-
-
-
-
-
-
-
-
-
+  
+  .select .pizza-type {
+    width: 350px;
+  }
+  .select .list-items .select-all {
+    width: 100px;
+    padding: 4px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    margin: 5px 5px;
+    background-color: transparent;
+    color: var(--text-color);
+    border: 3px solid var(--hover-color);
+    box-sizing: border-box;
+  }
+  .select .list-items .select-all:hover {
+    cursor: pointer;
+    color: var(--text-color);
+    background-color: var(--hover-color);
+  }
+  .select .list-items .item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+    height: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0 5px;
+    border-radius: 5px;
+    background-color: var(--card-filter);
+  }
+  .select .list-items .item:hover {
+    background-color: var(--hover-color);
+  }
+  .select .list-items .item label {
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 400;
+    padding-left: 5px;
+    color: var(--text-color);
+  }
+  .select .list-items .item #pizza-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 12px;
+    width: 12px;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: var(--tran-03);
+  }
+  
+  /* ========== Dashboard Analys ========== */
+  /* ========== Dashboard Analys ========== */
+  .analys {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 1.5rem;
+    justify-items: center;
+  }
+  .analys .analys-sales {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--card-color);
+    border-radius: 15px;
+    box-sizing: border-box;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  .analys-sales .sales-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .analys-sales .sales-icon i {
+    font-size: 2rem;
+    color: var(--text-color);
+  }
+  .analys-sales .sales-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .analys-sales .sales-text h3 {
+    font-size: 1rem;
+    color: var(--text-color);
+  }
+  .analys-sales .sales-text h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-color);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* ========== Dashboard Chart ========== */
+  /* ========== Dashboard Chart ========== */
+  .chart {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+      "tabel-1 tabel-1 tabel-2 tabel-2 best-size"
+      "avg-purchased avg-purchased daily-sales daily-sales daily-sales";
+  }
+  .chart-item:nth-child(1) {
+    grid-area: tabel-1;
+  }
+  .chart-item:nth-child(2) {
+    grid-area: tabel-2;
+  }
+  .chart-item:nth-child(3) {
+    grid-area: best-size;
+  }
+  .chart-item:nth-child(4) {
+    grid-area: avg-purchased;
+  }
+  .chart-item:nth-child(5) {
+    grid-area: daily-sales;
+  }
+  .chart .chart-item {
+    background-color: var(--card-color);
+    padding: 20px 10px;
+    border-radius: 15px;
+    height: 350px;
+    display: flex;
+    justify-content: space-betwen;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  .chart .chart-item .chart-img {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .chart .chart-item canvas {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+  }
+  .chart .chart-item p {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-color);
+  }
+  
+  /* ========== Tabel ========== */
+  .table {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 0 0;
+  }
+  .table .table-header {
+    font-size: 1.2rem;
+    color: var(--text-color);
+  }
+  
+  div.dt-container{
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1rem;
+    position: static;
+    margin-top: 5px;
+  }
+  div.dt-container select.dt-input, div.dt-container .dt-search input {
+    border: 1.5px solid var(--table-input);
+  }
+  div.dt-container select.dt-input option {
+    background-color: var(--card-color);
+  }
+  table.dataTable {
+    border-collapse: collapse;
+    background-color: var(--card-color);
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  table.dataTable thead tr {
+    background-color: #af672d;
+    color: #fff;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  table.dataTable thead > tr > th.dt-orderable-asc{
+    text-align: center;
+  }
+  table.dataTable > tbody > tr {
+    text-align: center;
+    font-size: 1rem;
+    border-bottom: 0.5px solid var(--table);
+  }
+  table.dataTable > tbody > tr{
+    background-color: var(--card-color);
+  }
+  table.dataTable tbody tr:hover td {
+    background-color: transparent;
+  }
+  table.dataTable tbody td.active {
+    background-color: transparent; 
+  }
+  table.dataTable td.dt-type-numeric {
+    text-align: center;
+  }
+  table.dataTable {
+    width: 100% !important;
+  }
+  div.dt-container .dt-paging .dt-paging-button.disabled, 
+  div.dt-container .dt-paging .dt-paging-button.disabled:hover, 
+  div.dt-container .dt-paging .dt-paging-button.disabled:active {
+    color: #f4f4f4 !important;
+  }
+  
+  /* ========== Footer ========== */
+  /* ========== Footer ========== */
+  footer {
+    background-color: #886839;
+    width: 100%;
+    padding: 15px 20px;
+  }
+  footer .footer-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .footer-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  footer span a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  
+  @media screen and (max-width: 1350px) {
+    .chart {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "tabel-1 tabel-2"
+        "best-size avg-purchased"
+        "daily-sales daily-sales";
+    }
+  }
+  @media screen and (max-width: 992px) {
+    .container-dashboard {
+      max-width: 992px;
+    }
+    .container-dashboard header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .chart .chart-item {
+      max-height: 300px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    html {
+      font-size: 12px !important;
+      background-color: #fff;
+    }
+    .container-dashboard {
+      max-width: 768px;
+      padding: 20px 5%;
+    }
+    .dash-header {
+      padding-top: 50px;
+    }
+    header .select {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 10px;
+      gap: 5px;
+    }
+    header .select {
+      width: 100%;
+    }
+    header .select-dropdown .select-btn {
+      width: 100%;
+    }
+    .select .pizza-type {
+      width: 310px;
+    }
+    .analys .analys-sales {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column-reverse;
+    }
+    .table .table-header {
+      text-align: center;
+    }
+    .chart {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "tabel-1"
+        "tabel-2"
+        "best-size"
+        "avg-purchased"
+        "daily-sales";
+    }
+    .chart .chart-item {
+      max-height: 320px;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .container-dashboard {
+      max-width: 576px;
+    }
+    .analys {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .analys .analys-sales {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-around;
+      height: 85px;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    header .select {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    header .select {
+      width: 95%;
+    }
+    header .select-dropdown .select-btn {
+      width: 100%;
+    }
+  }

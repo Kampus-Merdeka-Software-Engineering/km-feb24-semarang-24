@@ -143,7 +143,7 @@ body{
 }
 
 
-/* HEADER */
+/* HEADER */ 
 header{
     position:fixed;
     font-family: 'Poppins', sans-serif;
@@ -207,12 +207,6 @@ div.logojudul-kiri {
     justify-content: flex-start;
 }
 
-header h4 {
-    color: #ffffff;
-    margin-left: 15px;
-    padding-top: 15px;
-    white-space: nowrap;
-}
 
 .logo {
     width: 90px;

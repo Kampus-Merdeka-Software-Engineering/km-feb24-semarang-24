@@ -22,8 +22,8 @@
 }
 
 body{
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background-color: #E4E9F7;
+    
 }
 
 header{
@@ -37,6 +37,17 @@ header{
     justify-content: space-between;
     padding: 27px 9%;
     transition: all ease .55s;
+    background-color: #b69597;
+}
+header h1{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.logo {
+    width: 100px;
+    height:70px;
+    padding-left:10px ;
+    padding-top: 15px;
 }
 
 .menu{
@@ -59,7 +70,7 @@ header{
 
 .navlist a{
     font-size: var(--p-font);
-    color: var(--text-color);
+    color: white;
     font-weight: 600;
     margin: 0 35px;
     transition: all ease .55s;
@@ -76,6 +87,7 @@ header{
 .h-main{
     display: flex;
     align-items: center;
+    color: white;
 }
 
 .h-btn{

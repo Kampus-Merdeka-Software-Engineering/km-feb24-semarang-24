@@ -1,97 +1,192 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Home</title>
-        <link rel="stylesheet" type="text/css" href="css/home.css">
-
-        <!-- boxicons link -->
-        <link rel="stylesheet" href="http://unpkg.com/boxicons@latest/css/boxicons.min.css">
-        <!-- google fonts -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="img/24.png">
+        <title>HomeB - Pizza Sales Team 24</title>
+        <!-- Link Data Tables -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
+        <!-- Link Icon -->
+        <link rel="stylesheet"
+        href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/home.css">
+        <!-- Link Font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-        <!-- LOGO -->
-        <link rel="icon" href="img/24.png">
-        <title> Home - Pizza Sales Team 24</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     </head>
+
     <body>
-        <!-- header -->
+        <!-- HEADER -->
         <header>
-            <!-- <a href="#" class="menu">
-                <i img src="img/home/logo.png" alt="logoo" class="avatar"></i>Team 24
-            </a> -->
             <div class="logojudul-kiri">
                 <img class="logo" src="img/pizza.png" alt="Logo Pizza">
                 <h1>PIZZA PLACE SALES REPORT</h1>
             </div>
-            <div class="container">
-            <ul class="navlist">
-                <li><a href="#" style="color: #ffcc00;">Home</a></li>
-                <li><a href="team.html" onclick="loadPage('team.html')">About Us</a></li>
-                <li><a href="index.html" onclick="loadPage('index.html')">Statistic</a></li>
-                <!-- <li><div class="bx bx-moon" id="darkmode"></div></li>
-                <li><a href="login.html"><div class="bx bx-log-out" id="logout"></div></a></li> -->
-            </ul>
-
-            <div class="h-main">
-                <!-- <a href="index.html" target="_blank" class="h-btn">Statistic</a> -->
-                <!-- <a href="index.html" class="h-btn">Statistic</a> -->
-                <div class="bx bx-menu" id="menu-icon"></div>
-                <div class="bx bx-moon" id="darkmode"></div>
-                <a href="login.html">
-                <div class="bx bx-log-out" id="logout"></div>
-                </a>
-                <!-- <div class="bx bx-menu" id="menu-icon"></div> -->
-            </div>
-        </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html" onclick="loadPage('home.html')" style="color: #ffcc00;">Home</a></li>
+                    <li><a href="index.html" onclick="loadPage('index.html')">Statistics</a></li>
+                    <li><a href="team.html" onclick="loadPage('team.html')">About Us</a></li>
+                    <li><a href="login.html">
+                        <div class="bx bx-log-out" id="logout"></div>
+                    </a></li>
+                </ul>
+            </nav>
         </header>
 
-        <br><br>
-        <!-- hero section -->
-        <section class="hero">
-            <div class="hero-text">
+        <!-- HOME START -->
+         <section class="home" id="home">
+            <div class="home-text">
                 <h1>Pizza Restaurant</h1>
-                <h4>Semarang 24</h4>
-                <p>A pizza restaurant has a pizza sales dataset in a year, including information about the type of pizza sold, order time, and other details. This restaurant wants to optimize its production process to increase efficiency and profit by 10% within 3 months. </p>
-                <div class="hero-in">
-                    <div class="box">
-                        <h3>Classic</h3>
-                        <h5>Deluxe</h5>
-                        <img src="img/home/pizza1.png">
+                <h2>Semarang 24</h2>
+                <a href="#about" class="btn">Today's Menu</a>
+            </div>
+
+            <div class="home-img">
+                <img src="img/homebar/home.png" alt="">
+            </div>
+         </section>
+
+         <!-- ABOUT START -->
+         <section class="about" id="about">
+            <div class="about-img">
+                <img src="img/homebar/about.png">
+            </div>
+
+            <div class="about-text">
+                <span>About Us</span>
+                <h2>Lorem ipsum <br> dolor sit amet,.</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident quibusdam possimus delectus placeat harum, obcaecati, voluptatum voluptate omnis facere ad vero cumque, fuga rerum similique! Maiores magnam enim explicabo et.</p>
+                <a href="#services" class="btn">Learn More</a>
+            </div>
+         </section>
+
+         <!-- Menu Start-->
+          <section class="menu" id="menu">
+            <div class="heading">
+                <span>Pizzas Menu</span>
+                <h2>Fresh taste and great price</h2>
+            </div>
+
+            <div class="menu-container">
+                <div class="box">
+                    <div class="box-img">
+                        <img src="img/homebar/food1.png" alt="">
                     </div>
+                    <h2>Classic Deluxe</h2>
+                    <h3>Tasty Food</h3>
+                    <span>$16.00</span>
+                    <i class='bx bx-cart-alt'></i>
+                </div>
 
-                    <div class="box">
-                        <h3>Barbeque</h3>
-                        <h5>Chicken</h5>
-                        <img src="img/home/pizza2.png">
+                <div class="box">
+                    <div class="box-img">
+                        <img src="img/homebar/food2.png" alt="">
                     </div>
+                    <h2>California Chicken</h2>
+                    <h3>Tasty Food</h3>
+                    <span>$16.00</span>
+                    <i class='bx bx-cart-alt'></i>
+                </div>
 
-                    <div class="box">
-                        <h3>Hawaiian</h3>
-                        <h5>Pizza</h5>
-                        <img src="img/home/pizza3.png">
+                <div class="box">
+                    <div class="box-img">
+                        <img src="img/homebar/food3.png" alt="">
                     </div>
-
-                    <!-- <div class="box">
-                        <h3>Veggie</h3>
-                        <img src="img/home/pizza4.png">
-                    </div> -->
-
+                    <h2>Italian Capocollo</h2>
+                    <h3>Tasty Food</h3>
+                    <span>$16.00</span>
+                    <i class='bx bx-cart-alt'></i>
                 </div>
             </div>
+          </section>
 
-            <!-- <div class="hero-img" style="position: relative; right: 100px;"> -->
-            <div class="hero-img">
-                <img src="img//home/logo.png">
+          <!-- Service Start -->
+           <section class="services" id="services">
+            <div class="heading">
+                <span>Services</span>
+                <h2>We provide best quality food</h2>
             </div>
-        </section>
 
+            <div class="services-container">
+                <div class="s-box">
+                    <img src="img/homebar/s1.png" alt="">
+                    <h3>Order</h3>
+                    <p>There are many variations of passages of Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
 
-        <script src="https://unpkg.com/scrollreveal"></script>
-        <!-- js file link -->
-        <script src="js/home.js"></script>
+                <div class="s-box">
+                    <img src="img/homebar/s2.png" alt="">
+                    <h3>Shipping</h3>
+                    <p>There are many variations of passages of Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+
+                <div class="s-box">
+                    <img src="img/homebar/s3.png" alt="">
+                    <h3>Delivered</h3>
+                    <p>There are many variations of passages of Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+           </section>
+
+           <!-- Call to Action -->
+           <section class="cta">
+            <h2>We make quality food <br> Everyday</h2>
+            <a href="#contact" class="btn">Let's talk</a>
+           </section>
+
+           <!-- Footer -->
+            <section id="contact">
+                <div class="footer">
+                    <h2>Information</h2>
+                    <div class="main">
+                        <div class="col">
+                            <h4>Menu Links</h4>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Menu</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col">
+                            <h4>Our Service</h4>
+                            <ul>
+                                <li><a href="#">Web Design</a></li>
+                                <li><a href="#">Web Development</a></li>
+                                <li><a href="#">Marketing</a></li>
+                                <li><a href="#">Product Management</a></li>
+                                <li><a href="#">Graphic Design</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col">
+                            <h4>Information</h4>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Delivery Information</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col">
+                            <h4>Contact Us</h4>
+                            <div class="social">
+                                <a href="#"><i class='bx bxl-facebook'></i></a>
+                                <a href="#"><i class='bx bxl-instagram'></i></a>
+                                <a href="#"><i class='bx bxl-github'></i></a>
+                                <a href="#"><i class='bx bxl-linkedin'></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
     </body>
 </html>

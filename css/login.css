@@ -160,7 +160,7 @@ body{
 
 .form-title{
     margin: 40px 0;
-    color: #black;
+    color: #0000;
     font-size: 28px;
     font-weight: 600;
 }
@@ -241,6 +241,7 @@ body{
 .input-submit:hover{
     gap: 15px;
 }
+
 
 /* Responsive */
 @media (max-width: 892px){

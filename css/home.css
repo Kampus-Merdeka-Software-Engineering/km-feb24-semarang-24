@@ -15,6 +15,12 @@
     --other-color: #868686;
     --big-font: 5.5rem;
     --p-font: 1rem;
+    --body-color: #DEE5FF;
+    --header-text: #ffff;
+    --dark-header-bg: #08162a;
+    --dark-text-color: #fff;
+    --dark-bg-color: #000;
+    --dark-second-color: #2b3544;
 }
 
 .avatar{
@@ -22,10 +28,21 @@
 }
 
 body{
-    background-color: #E4E9F7;
-    
+    background-color: var(--body-color);
+    color: var(--text-color);
 }
 
+/* BODY DARKMODE */
+body.color{
+    --text-color: var(--dark-text-color);
+    --bg-color: #08162a;
+    --main-color: #D24E37;
+    --second-color: #2b3544;
+    --other-color: #868686;
+    --body-color: #0a061d;
+}
+
+/* HEADER */
 header{
     position: fixed;
     top: 0;
@@ -37,31 +54,20 @@ header{
     justify-content: space-between;
     padding: 27px 9%;
     transition: all ease .55s;
-    background-color: #b69597;
-}
-header h1{
-    color: white;
-    font-family: 'Poppins', sans-serif;
-}
-.logo {
-    width: 100px;
-    height:70px;
-    padding-left:10px ;
-    padding-top: 15px;
+    background-color: #50070c;
+    
+    /* color: var(--header-text); */
 }
 
-.menu{
-    display: flex;
-    align-items: center;
-    color: var(--text-color);
-    font-size: 40px;
-    font-weight: bold;
+body.color header {
+    /* #50070c */
+    background-color: var(--dark-header-bg); 
+    /* white */
+    color: var(--dark-text-color);
 }
-.menu i{
-    vertical-align: middle;
-    color: var(--main-color);
-    font-size: 20px;
-    margin-right: 5px;
+
+.logo {
+    width: 80px;
 }
 
 .navlist{
@@ -70,14 +76,26 @@ header h1{
 
 .navlist a{
     font-size: var(--p-font);
-    color: white;
+    color: var(--bg-color);
     font-weight: 600;
     margin: 0 35px;
+    margin-right: 2px;
     transition: all ease .55s;
+    font-family: 'Poppins', sans-serif;
 }
 
 .navlist a:hover{
-    color: var(--main-color);
+    color: var(--bg-color);
+}
+.logojudul-kiri h1{
+    color: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    margin: auto;
+}
+div.logojudul-kiri {
+    display: flex;
+    justify-content: flex-start;
 }
 
 .navlist a.active{
@@ -87,7 +105,32 @@ header h1{
 .h-main{
     display: flex;
     align-items: center;
+}
+
+#menu-icon{
+    font-size: 40px;
     color: white;
+    z-index: 10001;
+    cursor: pointer;
+    margin-bottom: 5px;
+    display: none;
+}
+
+#logout{
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    margin-left: 10px;
+}
+/* ======= */
+
+body.color .menu,
+body.color .navlist a,
+body.color #menu-icon,
+body.color header h1,
+body.color #darkmode,
+body.color #logout {
+    color: var(--dark-text-color);
 }
 
 .h-btn{
@@ -108,28 +151,17 @@ header h1{
     border: 2px solid var(--text-color);
     color: var(--text-color);
 }
-
-#menu-icon{
-    font-size: 40px;
-    color: var(--text-color);
-    z-index: 10001;
-    cursor: pointer;
-    margin: 15px;
-    display: none;
+.container {
+    margin-right: 10px;
+    display: flex;
 }
 
 #darkmode{
     font-size: 30px;
     cursor: pointer;
-    color: var(--text-color);
+    color: white;
     margin-left: 10px;
-}
-
-#logout{
-    font-size: 30px;
-    cursor: pointer;
-    color: var(--text-color);
-    margin-left: 10px;
+    margin-bottom: 5px;
 }
 
 section{
@@ -220,11 +252,6 @@ section{
     transform: translateY(-5px) scale(1.1);
 }
 
-body.color{
-    --text-color: #fff;
-    --bg-color: #08162a;
-    --second-color: #2b3544;
-}
 
 @media (max-width: 1600px){
     header{
@@ -282,11 +309,13 @@ body.color{
 @media (max-width: 1070px){
     header{
         padding: 10px 3%;
-        background: var(--second-color);
+        background: #50070c;
     }
     #menu-icon{
         display: initial;
     }
+
+    /* NAVLIST MENU */
     .navlist{
         position: absolute;
         top: -700px;
@@ -294,7 +323,7 @@ body.color{
         right: 0;
         display: flex;
         flex-direction: column;
-        background: #000;
+        background: #50070c;
         transition: all ease .55s;
         text-align: left;
     }

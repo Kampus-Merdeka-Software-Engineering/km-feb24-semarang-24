@@ -11,7 +11,7 @@
 /* Body */
 body{
     /* background: url("../img/login/1.jpg"); */
-    background-color: #E4E9F7;
+    background-color: #DEE5FF;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -42,7 +42,7 @@ body{
     justify-content: center;
     flex-direction: column;
     width: 55%;
-    background: rgba(234, 166, 154, 0.205);
+    background: rgba(255, 255, 255, 0.375);
     backdrop-filter: blur(70px);
     border-radius: 0 30% 20% 0;
     transition: border-radius .3s;

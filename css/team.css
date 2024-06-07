@@ -12,7 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #e5e5e5;
+    background: #DEE5FF;
 }
 
 .wrapper .title{
@@ -49,14 +49,14 @@ body{
     height: 400px;
     margin: 20px;
     overflow: hidden;
-    box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 1), inset 0 0 0 1000px rgb(221 110 11 / 26%);
+    box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.455), inset 0 0 0 1000px rgb(221 110 11 / 26%);
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .imgBx{
-    background-color: #dfbeae ;
+    background-color: #e4e9f7 ;
 }
 .imgBx img{
     width: 300px;
@@ -93,7 +93,7 @@ body{
 
 .content .contentBx h3{
     text-transform: uppercase;
-    color: #fff;
+    color: #000000;
     letter-spacing: 2px;
     font-weight: 500;
     font-size: 18px;
@@ -138,12 +138,12 @@ body{
 }
 
 .content .sci li a{
-    color: #fff;
+    color: #000000;
     font-size: 24px;
 }
 
 
-/* HEADER */ 
+/* HEADER */
 header{
     position:fixed;
     font-family: 'Poppins', sans-serif;
@@ -171,8 +171,8 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
-    margin-left: 20px;
+    display: flex;
+    margin-right: 25px;
 }
 
 nav ul li a {
@@ -197,7 +197,7 @@ header h1 {
     color: #ffffff;
     font-size: 25px;
     margin-left: 20px;
-    padding-top: 35px;
+    padding-top: 20px;
     margin-right: 0px;
     white-space: nowrap; /* Hindari pemutusan teks saat layar terlalu kecil */
 }
@@ -205,12 +205,19 @@ header h1 {
 div.logojudul-kiri {
     display: flex;
     justify-content: flex-start;
+    margin-left: 20px;
 }
 
+header h1 {
+    color: #ffffff;
+    margin-left: 10px;
+    margin-top: 8px;
+    white-space: nowrap;
+}
 
 .logo {
-    width: 90px;
-    height:90px;
+    width: 100px;
+    height: 65px;
     padding-left:20px ;
     padding-top: 15px;
 }
@@ -225,5 +232,6 @@ div.logojudul-kiri {
     font-size: 30px;
     cursor: pointer;
     color: white;
-    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: auto;
 }

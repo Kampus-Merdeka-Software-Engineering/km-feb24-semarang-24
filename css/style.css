@@ -8,11 +8,13 @@ header{
     font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: space-between;
-    background-color: #50070c;
+    background-color: #AD3B02;
     width: 100%; 
     top: 0; 
     z-index: 1000; 
     height: 100px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 
@@ -70,7 +72,7 @@ div.logojudul-kiri {
 header h1 {
     color: #ffffff;
     margin-left: 10px;
-    margin-top: 10px;
+    margin-top: 8px;
     white-space: nowrap;
 }
 
@@ -428,7 +430,7 @@ header h1 {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   }
   table.dataTable thead tr {
-    background-color: #af672d;
+    background-color: #FE7028;
     color: #fff;
     text-align: center;
     font-size: 1.1rem;
@@ -466,7 +468,7 @@ header h1 {
   /* ========== Footer ========== */
   /* ========== Footer ========== */
   footer {
-    background-color: #886839;
+    background-color: #F4D6CB;
     width: 100%;
     padding: 15px 20px;
   }
@@ -478,13 +480,13 @@ header h1 {
   footer .footer-card h3 {
     font-size: 1rem;
     font-weight: 700;
-    color: #fff;
+    color: #AD3B02;
   }
   footer span a {
     text-decoration: none;
     font-size: 1rem;
     font-weight: 700;
-    color: #fff;
+    color: #AD3B02;
   }
   
   @media screen and (max-width: 1350px) {

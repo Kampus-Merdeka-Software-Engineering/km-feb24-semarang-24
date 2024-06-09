@@ -149,7 +149,7 @@ header{
     font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: space-between;
-    background-color: #50070c;
+    background-color: #AD3B02;
     width: 100%; 
     top: 0; 
     z-index: 1000; 
@@ -238,7 +238,7 @@ header h1 {
 /* ========== Footer ========== */
   /* ========== Footer ========== */
   footer {
-    background-color: #886839;
+    background-color: #f4d6cb;
     width: 100%;
     padding: 15px 20px;
   }
@@ -250,13 +250,13 @@ header h1 {
   footer .footer-card h3 {
     font-size: 1rem;
     font-weight: 700;
-    color: #fff;
+    color: #ad3b02;
   }
   footer span a {
     text-decoration: none;
     font-size: 1rem;
     font-weight: 700;
-    color: #fff;
+    color: #ad3b02;
   }
   .container-dashboard header {
     display: flex;

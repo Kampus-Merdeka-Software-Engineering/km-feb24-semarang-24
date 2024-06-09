@@ -5,7 +5,7 @@ const registerForm = document.querySelector(".register-form");
 
 
 loginBtn.addEventListener('click', () => {
-    loginBtn.style.backgroundColor = "#3d0508";
+    loginBtn.style.backgroundColor = "#AD3B02";
     loginBtn.style.color = "#FFFFFF";
     registerBtn.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
     registerBtn.style.color = "#737373";
@@ -23,7 +23,7 @@ loginBtn.addEventListener('click', () => {
 registerBtn.addEventListener('click', () => {
     loginBtn.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
     loginBtn.style.color = "#737373";
-    registerBtn.style.backgroundColor = "#3d0508";
+    registerBtn.style.backgroundColor = "#AD3B02";
     registerBtn.style.color = "#FFFFFF";
 
     loginForm.style.left = "150%";

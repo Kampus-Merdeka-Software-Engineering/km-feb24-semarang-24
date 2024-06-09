@@ -90,7 +90,7 @@ body{
 }
 .featured-words span{
     font-weight: 600;
-    color: #50070C;
+    color: #AD3B02;
 }
 
 /* Second Colum */
@@ -121,7 +121,7 @@ body{
 }
 
 .btn-1{
-    background: #3d0508;
+    background: #AD3B02;
 }
 
 .btn:hover{
@@ -230,7 +230,7 @@ body{
     padding: 0 15px;
     margin: 10px 0;
     color: white;
-    background: #3d0508;
+    background: #AD3B02;
     border: none;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);

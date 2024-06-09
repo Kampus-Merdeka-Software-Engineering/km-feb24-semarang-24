@@ -239,16 +239,17 @@ function createSalesSizeChart(data) {
     const totalSalesB = data.filter((item) => item.Size === b).reduce((total, item) => total + parseInt(item.Quantity), 0);
     return totalSalesB - totalSalesA; // Urutkan dari yang tertinggi ke terendah
   });
+
   const sizeSales = pizzaSizes.map((size) => {
     return data.filter((item) => item.Size === size).reduce((total, item) => total + parseInt(item.Quantity), 0);
   });
 
   const sizeColors = { 
-    S: "#C2564F",
-    M: "#F18C7D",
-    L: "#A85344",
-    XL: "D24E37",
-    XXL: "#E4B400",
+    S: "#FE7028",
+    M: "#D65615",
+    L: "#AD3B02",
+    XL: "#FE945F",
+    XXL: "#FE7C3B",
   };
 
   const colors = pizzaSizes.map((size) => sizeColors[size] || "#000");
@@ -264,7 +265,6 @@ function createSalesSizeChart(data) {
       labels: pizzaSizes,
       datasets: [
         {
-          label: "Total Sales",
           data: sizeSales,
           backgroundColor: colors,
           borderWidth: 1,
@@ -281,49 +281,41 @@ function createSalesSizeChart(data) {
       },
       plugins: {
         legend: {
-          position: "top",
-          labels: {
-            color: tickColor,
-            usePointStyle: true,
-          },
+          display: false,
         },
         tooltip: {
           callbacks: {
             label: function (context) {
               const label = context.label || "";
               const value = context.raw || 0;
-              // const total = context.dataset.data.reduce((sum, val) => sum + val, 0);
-              // const percentage = ((value / total) * 100).toFixed(2);
-              // return `${label}: $${value.toFixed(2)} (${percentage}%)`;
-              // return `${label}: ${value.toFixed(2)}`;
               return `${label}: ${value}`;
             },
           },
         },
         datalabels: {
-          display: true,
-          // formatter: (value, context) => {
-            formatter: (value) => {
-            // const total = context.chart.data.datasets[0].data.reduce((sum, val) => sum + val, 0);
-            // const percentage = ((value / total) * 100).toFixed(2);
-            // return `${percentage}%`;
+          anchor: 'end',
+          align: 'start',
+          color: '#fff',
+          font: {
+            weight: 'bold',
+            size: 14,
+          },
+          formatter: function(value, context) {
+            const label = context.chart.data.labels[context.dataIndex];
+            if (label === 'XL' || label === 'XXL') {
+              return null; // Sembunyikan label untuk ukuran XL dan XXL
+            }
             return value;
-          },
-          color: "#fff",
-          labels: {
-            title: {
-              font: {
-                weight: "bold",
-              },
-            },
-          },
-        },
+          }
+        }
       },
     },
-    plugins: [ChartDataLabels],
+    plugins: [ChartDataLabels]
   });
+
   bestSellingPizzaSizeChart.update();
 }
+
 
 // ==============================CATEGORY=========================
 let quantityCategory;
@@ -340,10 +332,10 @@ function createQuantityCategoryChart(data) {
   });
 
   const categoryColors = {
-    Classic: "#D24E37",
-    Veggie: "#C2564F",
-    Supreme: "#A85344",
-    Chicken: "#F18C7D",
+    Classic: "#AD3B02",
+    Veggie: "#D65615",
+    Supreme: "#FE7C3B",
+    Chicken: "#FE945F",
   };
 
   const colors = pizzaSizes.map((size) => categoryColors[size] || "#000");
@@ -453,7 +445,7 @@ function createHourlyTrendChart(data) {
           label: "Total Sales ($)",
           data: sales,
           backgroundColor: "transparent",
-          borderColor: 'rgba(210, 78, 55, 0.5)',
+          borderColor: 'rgba(254, 112, 40, 1)',
           borderWidth: 2,
           fill: true,
         },
@@ -485,7 +477,11 @@ function createHourlyTrendChart(data) {
           color: tickColor,
           anchor: "start",
           align: "start",
-          formatter: function (value) {
+          formatter: function (value, context) {
+            const label = context.chart.data.labels[context.dataIndex];
+            if (label === '9' || label === '10' || label === '23') {
+              return null; // Sembunyikan label untuk jam 9, 10, dan 23
+            }
             return `${Math.round(value).toLocaleString()}`;
           },
           font: {
@@ -580,7 +576,7 @@ function createMonthlyTrendChart(data) {
           label: "Total Sales ($)",
           data: sales,
           backgroundColor: "transparent",
-          borderColor: 'rgba(210, 78, 55, 0.5)',
+          borderColor: 'rgba(254, 112, 40, 1)',
           borderWidth: 2,
           fill: true,
         },
@@ -690,23 +686,23 @@ function createDailyTrendChart(data) {
           data: sales,
           backgroundColor: 
           [
-            'rgba(210, 78, 55, 1)',
-            'rgba(168, 83, 68, 1)',
-            'rgba(168, 83, 68, 1)',
-            'rgba(184, 87, 67, 1)',
-            'rgba(219, 104, 86, 1)',
-            'rgba(229, 116, 104, 1)',
-            'rgba(241, 140, 125, 1)'
+            `rgba(254, 160, 113, 1)`,
+            `rgba(254, 148, 95, 1)`,
+            `rgba(254, 124, 59, 1)`,
+            `rgba(254, 112, 40, 1)`,
+            `rgba(234, 99, 31, 1)`,
+            `rgba(214, 86, 21, 1)`,
+            `rgba(173, 59, 2, 1)`
           ],
           borderColor: 
           [
-            'rgba(210, 78, 55, 1)',
-            'rgba(168, 83, 68, 1)',
-            'rgba(168, 83, 68, 1)',
-            'rgba(184, 87, 67, 1)',
-            'rgba(219, 104, 86, 1)',
-            'rgba(229, 116, 104, 1)',
-            'rgba(241, 140, 125, 1)'
+            `rgba(254, 160, 113, 1)`,
+            `rgba(254, 148, 95, 1)`,
+            `rgba(254, 124, 59, 1)`,
+            `rgba(254, 112, 40, 1)`,
+            `rgba(234, 99, 31, 1)`,
+            `rgba(214, 86, 21, 1)`,
+            `rgba(173, 59, 2, 1)`
           ],
           borderWidth: 1,
           fill: true,
@@ -813,13 +809,11 @@ function createTop5BestSellingPizzaTypeChart(data) {
           data: top5Sales,
           backgroundColor: 
           [
-                      'rgba(210, 78, 55, 1)',
-                      'rgba(168, 83, 68, 1)',
-                      'rgba(168, 83, 68, 1)',
-                      'rgba(184, 87, 67, 1)',
-                      'rgba(219, 104, 86, 1)',
-                      'rgba(229, 116, 104, 1)',
-                      'rgba(241, 140, 125, 1)'
+          `rgba(254, 124, 59, 1)`,
+          `rgba(254, 112, 40, 1)`,
+          `rgba(234, 99, 31, 1)`,
+          `rgba(214, 86, 21, 1)`,
+          `rgba(173, 59, 2, 1)`
                     ],
           borderRadius: 2,
           borderSkipped: false,
@@ -920,13 +914,11 @@ function createTop5LeastSellingPizzaTypeChart(data) {
           label: "Total Sales",
           data: top5Sales,
           backgroundColor: [
-            'rgba(210, 78, 55, 1)',
-            'rgba(168, 83, 68, 1)',
-            'rgba(168, 83, 68, 1)',
-            'rgba(184, 87, 67, 1)',
-            'rgba(219, 104, 86, 1)',
-            'rgba(229, 116, 104, 1)',
-            'rgba(241, 140, 125, 1)'
+            `rgba(254, 124, 59, 1)`,
+            `rgba(254, 112, 40, 1)`,
+            `rgba(234, 99, 31, 1)`,
+            `rgba(214, 86, 21, 1)`,
+            `rgba(173, 59, 2, 1)`
           ],
           borderRadius: 2,
           borderSkipped: false,
@@ -988,6 +980,7 @@ function createTop5LeastSellingPizzaTypeChart(data) {
   });
 }
 
+//BEST SELLING
 function bestSellingPizzaTable(data) {
   const pizzaSales = data.reduce((acc, item) => {
     const name = item["Name"];

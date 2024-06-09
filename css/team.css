@@ -154,8 +154,25 @@ header{
     top: 0; 
     z-index: 1000; 
     height: 100px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
+header h1 {
+    color: #ffffff;
+    font-size: 25px;
+    margin-left: 20px;
+    padding-top: 20px;
+    margin-right: 0px;
+    white-space: nowrap; /* Hindari pemutusan teks saat layar terlalu kecil */
+}
+
+header h1 {
+    color: #ffffff;
+    margin-left: 10px;
+    margin-top: 2px;
+    white-space: nowrap;
+}
 
 nav {
     padding: 37px 0 0 0;
@@ -193,26 +210,10 @@ div.team {
     
 }
 
-header h1 {
-    color: #ffffff;
-    font-size: 25px;
-    margin-left: 20px;
-    padding-top: 20px;
-    margin-right: 0px;
-    white-space: nowrap; /* Hindari pemutusan teks saat layar terlalu kecil */
-}
-
 div.logojudul-kiri {
     display: flex;
     justify-content: flex-start;
     margin-left: 20px;
-}
-
-header h1 {
-    color: #ffffff;
-    margin-left: 10px;
-    margin-top: 8px;
-    white-space: nowrap;
 }
 
 .logo {

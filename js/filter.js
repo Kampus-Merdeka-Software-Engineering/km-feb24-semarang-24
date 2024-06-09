@@ -225,6 +225,7 @@ function displayData(data) {
 
 // =====================================SIZE====================
 let bestSellingPizzaSizeChart;
+
 function createSalesSizeChart(data) {
   const ctx = document.getElementById("bestSellingPizzaSizeChart").getContext("2d");
 
@@ -288,13 +289,13 @@ function createSalesSizeChart(data) {
             label: function (context) {
               const label = context.label || "";
               const value = context.raw || 0;
-              return `${label}: ${value}`;
+              return `${label}: ${value.toLocaleString()}`;
             },
           },
         },
         datalabels: {
-          anchor: 'end',
-          align: 'start',
+          anchor: 'center',
+          align: 'center',
           color: '#fff',
           font: {
             weight: 'bold',
@@ -305,7 +306,7 @@ function createSalesSizeChart(data) {
             if (label === 'XL' || label === 'XXL') {
               return null; // Sembunyikan label untuk ukuran XL dan XXL
             }
-            return value;
+            return value.toLocaleString();
           }
         }
       },
@@ -315,6 +316,7 @@ function createSalesSizeChart(data) {
 
   bestSellingPizzaSizeChart.update();
 }
+
 
 
 // ==============================CATEGORY=========================
@@ -486,6 +488,7 @@ function createHourlyTrendChart(data) {
           },
           font: {
             weight: "bold",
+            size: 9, // Ganti ukuran font sesuai kebutuhan, misalnya 12
           },
         },
       },
@@ -516,6 +519,7 @@ function createHourlyTrendChart(data) {
     plugins: [ChartDataLabels],
   });
 }
+
 
 
 // =====================MONTHLY=============================
@@ -613,6 +617,7 @@ function createMonthlyTrendChart(data) {
           },
           font: {
             weight: "bold",
+            size: 9,
           },
         },
       },
@@ -629,7 +634,7 @@ function createMonthlyTrendChart(data) {
           ticks: {
             stepSize: 500,
             beginAtZero: false,
-            min: 3000,
+            min: 3800,
             max: 4500,
             color: tickColor,
             callback: function (value) {
@@ -668,8 +673,8 @@ function createDailyTrendChart(data) {
 
   // Ensure labels start from Sunday
   const daysOrder = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  const labels = daysOrder.filter(day => dailySales.hasOwnProperty(day));
-  const sales = labels.map((day) => dailySales[day]);
+  const labels = daysOrder.filter(day => dailySales.hasOwnProperty(day)).map(day => day.substring(0, 3));
+  const sales = labels.map((day, index) => dailySales[daysOrder[index]]);
 
   let tickColor = "#000";
   if (document.body.classList.contains("dark")) {
@@ -714,7 +719,7 @@ function createDailyTrendChart(data) {
       maintainAspectRatio: false,
       animation: {
         tension: {
-          duration: 2000, // Durasi animasi
+          duration: 2000,
           easing: "linear", 
           from: 1.2, 
           to: 0.5, 
@@ -733,8 +738,8 @@ function createDailyTrendChart(data) {
         },
         datalabels: {
           color: "#fff",
-          anchor: "end",
-          align: "start",
+          anchor: "center",
+          align: "center",
           formatter: function (value) {
             return `${Math.round(value).toLocaleString()}`;
           },

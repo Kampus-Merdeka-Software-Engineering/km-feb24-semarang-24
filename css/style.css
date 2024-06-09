@@ -1,241 +1,101 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.body{
     font-family: 'Poppins', sans-serif;
+    margin: auto;
 }
-
-body{
-   
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #DEE5FF;
-}
-
-.wrapper .title{
-    text-align: center;
-}
-
-.title h4{
-    display: inline-block;
-    padding: 20px;
-    color: #000000;
-    font-size: 50px;
-    font-weight: 500;
-    letter-spacing: 1.2px;
-    word-spacing: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    text-transform: uppercase;
-    backdrop-filter: blur(15px);
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    word-wrap: break-word;
-}
-
-.wrapper .card_Container{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 40px 0;
-}
-
-.card_Container .card{
-    position: relative;
-    width: 300px;
-    height: 400px;
-    margin: 20px;
-    overflow: hidden;
-    box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.455), inset 0 0 0 1000px rgb(221 110 11 / 26%);
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.imgBx{
-    background-color: #e4e9f7 ;
-}
-.imgBx img{
-    width: 300px;
-    height: 350px;
-    justify-content: center;
-}
-
-.card .imgBx{
-    width: 100%;
-    height: 100%;
-}
-
-.card .content{
-    position: absolute;
-    bottom: -160px;
-    width: 100%;
-    height: 160px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    backdrop-filter: blur(40px);
-    box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    transition: bottom 0.5s;
-    transition-delay: 0.7s;
-}
-
-.card:hover .content{
-    bottom: 0;
-    transition-delay: 0s;
-}
-
-.content .contentBx h3{
-    text-transform: uppercase;
-    color: #000000;
-    letter-spacing: 2px;
-    font-weight: 500;
-    font-size: 18px;
-    text-align: center;
-    margin: 20px 0 15px;
-    line-height: 1.1em;
-    transition: 0.5s;
-    transition-delay: 0.6s;
-    opacity: 0;
-    transform: translateY(-20px);
-}
-
-.card:hover .content .contentBx h3{
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.content .contentBx h3 span{
-    font-size: 12px;
-    font-weight: 300;
-    text-transform: initial;
-}
-
-.content .sci{
-    position: relative;
-    bottom: 10px;
-    display: flex;
-}
-
-.content .sci li{
-    list-style: none;
-    margin: 0 10px;
-    transform: translateY(40px);
-    transition: 0.5s;
-    opacity: 0;
-    transition-delay: calc(0.2s * var(--i));
-}
-
-.card:hover .content .sci li{
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.content .sci li a{
-    color: #000000;
-    font-size: 24px;
-}
-
-
 /* HEADER */
 header{
-    position:fixed;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: space-between;
-    background-color: #AD3B02;
-    width: 100%; 
-    top: 0; 
-    z-index: 1000; 
-    height: 100px;
-    padding: 0 20px;
-    box-sizing: border-box;
+  position:fixed;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  background-color: #AD3B02;
+  width: 100%; 
+  top: 0; 
+  z-index: 1000; 
+  height: 100px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 header h1 {
-    color: #ffffff;
-    font-size: 25px;
-    margin-left: 20px;
-    padding-top: 20px;
-    margin-right: 0px;
-    white-space: nowrap; /* Hindari pemutusan teks saat layar terlalu kecil */
+  color: #ffffff;
+  font-size: 25px;
+  margin-left: 20px;
+  padding-top: 20px;
+  margin-right: 0px;
+  white-space: nowrap; /* Hindari pemutusan teks saat layar terlalu kecil */
 }
 
 header h1 {
-    color: #ffffff;
-    margin-left: 10px;
-    margin-top: 2px;
-    white-space: nowrap;
+  color: #ffffff;
+  margin-left: 10px;
+  margin-top: 8px;
+  white-space: nowrap;
 }
 
 nav {
-    padding: 37px 0 0 0;
-    margin: 0 0 0 300px;
+  padding: 37px 0 0 0;
+  margin: 0;
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 nav ul li {
-    display: flex;
-    margin-right: 25px;
+  display: flex;
+  margin-right: 25px;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 18px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 nav ul li a:hover {
-    color: #ffcc00;
+  color: #ffcc00;
 }
 
 div.team {
-    display: flex;
-    justify-content: space-between;
-    margin: -20px 20px 0 0;
-    
+  display: flex;
+  justify-content: space-between;
+  margin: -20px 20px 0 0;
+  
 }
 
 div.logojudul-kiri {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: 20px;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 20px;
 }
 
 .logo {
-    width: 100px;
-    height: 65px;
-    padding-left:20px ;
-    padding-top: 15px;
+  width: 100px;
+  height: 65px;
+  padding-left:20px ;
+  padding-top: 15px;
 }
 
 .profil {
-    width: 100px;
-    height:70px;
-    padding-top: -20px;
+  width: 100px;
+  height:70px;
+  padding-top: -20px;
 }
 
 #logout{
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
-    margin-right: 10px;
-    margin-top: auto;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  margin-right: 10px;
+  margin-top: auto;
 }
+
 .container-dashboard {
     margin-top: 110px;
     font-family: 'Poppins', sans-serif;
@@ -299,8 +159,7 @@ div.logojudul-kiri {
   }
   
   /* ========== Dashboard Header ========== */
-  /* ========== Dashboard Header ========== */
-  /* .container-dashboard header {
+  .container-dashboard header {
     display: flex;
     justify-content: space-between;
   }
@@ -308,7 +167,7 @@ div.logojudul-kiri {
     font-size: 2.2rem;
     font-weight: 700;
     color: var(--text-color);
-  } */
+  }
   .select {
     display: flex;
     align-items: center;
@@ -429,7 +288,7 @@ div.logojudul-kiri {
     display: grid;
     flex-wrap: wrap;
     grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    gap: 10px;
     margin-top: 1.5rem;
     justify-content: center;
   }
@@ -477,253 +336,320 @@ div.logojudul-kiri {
   }
   
  /* ========== Dashboard Chart ========== */
-  /* ========== Dashboard Chart ========== */
+ .chart {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 15px;
+}
+
+.grid-1 {
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for grid 1 */
+  grid-template-areas:
+    "hourlyTrend monthlyTrend dailyTrend";
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr); /* 2 columns for grid 2 */
+  grid-template-areas:
+    "quantityCategory orderSize";
+}
+
+.grid-3 {
+  grid-template-columns: repeat(2, 1fr); /* 2 columns for grid 3 */
+  grid-template-areas:
+    "topBestPizza topWorstPizza";
+}
+
+.chart-item:nth-child(1) {
+  grid-area: hourlyTrend;
+}
+
+.chart-item:nth-child(2) {
+  grid-area: monthlyTrend;
+}
+
+.chart-item:nth-child(3) {
+  grid-area: dailyTrend;
+}
+
+.chart.grid-2 .chart-item:nth-child(1) {
+  grid-area: quantityCategory;
+}
+
+.chart.grid-2 .chart-item:nth-child(2) {
+  grid-area: orderSize;
+}
+
+.chart.grid-3 .chart-item:nth-child(1) {
+  grid-area: topBestPizza;
+}
+
+.chart.grid-3 .chart-item:nth-child(2) {
+  grid-area: topWorstPizza;
+}
+
+
+.chart .chart-item {
+  background-color: var(--card-color);
+  padding: 20px 10px;
+  border-radius: 15px;
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chart .chart-item .chart-img {
+  width: 100%;
+  height: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart .chart-item canvas {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+}
+
+.chart .chart-item p {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+/* ========== Tabel ========== */
+.table {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 0 0;
+}
+
+.table .table-header {
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+div.dt-container {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 1rem;
+  position: static;
+  margin-top: 5px;
+}
+
+div.dt-container select.dt-input, div.dt-container .dt-search input {
+  border: 1.5px solid var(--table-input);
+}
+
+div.dt-container select.dt-input option {
+  background-color: var(--card-color);
+}
+
+table.dataTable {
+  border-collapse: collapse;
+  background-color: var(--card-color);
+  margin: 1px 0;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+table.dataTable thead tr {
+  background-color: #FE7028;
+  color: #fff;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+table.dataTable thead > tr > th.dt-orderable-asc {
+  text-align: center;
+}
+
+table.dataTable > tbody > tr {
+  text-align: center;
+  font-size: 1rem;
+  border-bottom: 0.5px solid var(--table);
+}
+
+table.dataTable > tbody > tr {
+  background-color: var(--card-color);
+}
+
+table.dataTable tbody tr:hover td {
+  background-color: transparent;
+}
+
+table.dataTable tbody td.active {
+  background-color: transparent;
+}
+
+table.dataTable td.dt-type-numeric {
+  text-align: center;
+}
+
+table.dataTable {
+  width: 100% !important;
+}
+
+div.dt-container .dt-paging .dt-paging-button.disabled,
+div.dt-container .dt-paging .dt-paging-button.disabled:hover,
+div.dt-container .dt-paging .dt-paging-button.disabled:active {
+  color: #f4f4f4 !important;
+}
+
+/* ========== Footer ========== */
+footer {
+  background-color: #F4D6CB;
+  width: 100%;
+  padding: 15px 20px;
+}
+
+footer .footer-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .footer-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #AD3B02;
+}
+
+footer span a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #AD3B02;
+}
+
+@media screen and (max-width: 1350px) {
   .chart {
-    margin-top: 1.5rem;
-    display: grid;
-    gap: 16px;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-areas:
-      "tabel-1 tabel-1 tabel-2 tabel-2 best-size"
-      "avg-purchased avg-purchased daily-sales daily-sales daily-sales";
-  }
-  .chart-item:nth-child(1) {
-    grid-area: tabel-1;
-  }
-  .chart-item:nth-child(2) {
-    grid-area: tabel-2;
-  }
-  .chart-item:nth-child(3) {
-    grid-area: best-size;
-  }
-  .chart-item:nth-child(4) {
-    grid-area: avg-purchased;
-  }
-  .chart-item:nth-child(5) {
-    grid-area: daily-sales;
-  }
-  .chart .chart-item {
-    background-color: var(--card-color);
-    padding: 20px 10px;
-    border-radius: 15px;
-    height: 350px;
-    display: flex;
-    justify-content: space-betwen;
-    align-items: center;
-    flex-direction: column;
-    box-sizing: border-box;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  }
-  .chart .chart-item .chart-img {
-    width: 100%;
-    height: 95%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .chart .chart-item canvas {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 100%;
-    max-height: 100%;
-    box-sizing: border-box;
-  }
-  .chart .chart-item p {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--text-color);
-  }
-  
-  /* ========== Tabel ========== */
-  .table {
-    display: flex;
-    flex-direction: column;
-    padding: 20px 0 0 0;
-  }
-  .table .table-header {
-    font-size: 1.2rem;
-    color: var(--text-color);
-  }
-  
-  div.dt-container{
-    color: var(--text-color);
-    font-weight: 500;
-    font-size: 1rem;
-    position: static;
-    margin-top: 5px;
-  }
-  div.dt-container select.dt-input, div.dt-container .dt-search input {
-    border: 1.5px solid var(--table-input);
-  }
-  div.dt-container select.dt-input option {
-    background-color: var(--card-color);
-  }
-  table.dataTable {
-    border-collapse: collapse;
-    background-color: var(--card-color);
-    margin: 10px 0;
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  }
-  table.dataTable thead tr {
-    background-color: #FE7028;
-    color: #fff;
-    text-align: center;
-    font-size: 1.1rem;
-    font-weight: 700;
-  }
-  table.dataTable thead > tr > th.dt-orderable-asc{
-    text-align: center;
-  }
-  table.dataTable > tbody > tr {
-    text-align: center;
-    font-size: 1rem;
-    border-bottom: 0.5px solid var(--table);
-  }
-  table.dataTable > tbody > tr{
-    background-color: var(--card-color);
-  }
-  table.dataTable tbody tr:hover td {
-    background-color: transparent;
-  }
-  table.dataTable tbody td.active {
-    background-color: transparent; 
-  }
-  table.dataTable td.dt-type-numeric {
-    text-align: center;
-  }
-  table.dataTable {
-    width: 100% !important;
-  }
-  div.dt-container .dt-paging .dt-paging-button.disabled, 
-  div.dt-container .dt-paging .dt-paging-button.disabled:hover, 
-  div.dt-container .dt-paging .dt-paging-button.disabled:active {
-    color: #f4f4f4 !important;
-  }
-  
-  /* ========== Footer ========== */
-  /* ========== Footer ========== */
-  footer {
-    background-color: #F4D6CB;
-    width: 100%;
-    padding: 15px 20px;
-  }
-  footer .footer-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  footer .footer-card h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #AD3B02;
-  }
-  footer span a {
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #AD3B02;
-  }
-  
-  @media screen and (max-width: 1350px) {
-    .chart {
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
-        "tabel-1 tabel-2"
-        "best-size avg-purchased"
-        "daily-sales daily-sales";
-    }
+          "hourlyTrend monthlyTrend"
+          "dailyTrend quantityCategory"
+          "orderSize topPizza";
   }
-  @media screen and (max-width: 992px) {
-    .container-dashboard {
+}
+
+@media screen and (max-width: 992px) {
+  .container-dashboard {
       max-width: 992px;
-    }
-    .container-dashboard header {
+  }
+
+  .container-dashboard header {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 10px;
-    }
-    .chart .chart-item {
-      max-height: 300px;
-    }
   }
-  @media screen and (max-width: 768px) {
-    html {
+
+  .chart .chart-item {
+      max-height: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
       font-size: 12px !important;
       background-color: #fff;
-    }
-    .container-dashboard {
+  }
+
+  .container-dashboard {
       max-width: 768px;
       padding: 20px 5%;
-    }
-    .dash-header {
+  }
+
+  .dash-header {
       padding-top: 50px;
-    }
-    header .select {
+  }
+
+  header .select {
       display: grid;
       grid-template-columns: 1fr 1fr;
       margin-top: 10px;
       gap: 5px;
-    }
-    header .select {
+  }
+
+  header .select {
       width: 100%;
-    }
-    header .select-dropdown .select-btn {
+  }
+
+  header .select-dropdown .select-btn {
       width: 100%;
-    }
-    .select .pizza-type {
+  }
+
+  .select .pizza-type {
       width: 310px;
-    }
-    .analys .analys-sales {
+  }
+
+  .analys .analys-sales {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column-reverse;
-    }
-    .table .table-header {
+  }
+
+  .table .table-header {
       text-align: center;
-    }
-    .chart {
+  }
+
+  .chart {
       grid-template-columns: 1fr;
       grid-template-areas:
-        "tabel-1"
-        "tabel-2"
-        "best-size"
-        "avg-purchased"
-        "daily-sales";
-    }
-    .chart .chart-item {
-      max-height: 320px;
-    }
+          "hourlyTrend"
+          "monthlyTrend"
+          "dailyTrend"
+          "quantityCategory"
+          "orderSize"
+          "topPizza";
   }
-  @media screen and (max-width: 576px) {
-    .container-dashboard {
+
+  .chart .chart-item {
+      max-height: 320px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container-dashboard {
       max-width: 576px;
-    }
-    .analys {
+  }
+
+  .analys {
       display: grid;
       grid-template-columns: 1fr;
-    }
-    .analys .analys-sales {
+  }
+
+  .analys .analys-sales {
       display: flex;
       align-items: center;
       flex-direction: row;
       justify-content: space-around;
       height: 85px;
-    }
   }
-  @media screen and (max-width: 400px) {
-    header .select {
+}
+
+@media screen and (max-width: 400px) {
+  header .select {
       display: grid;
       grid-template-columns: 1fr;
-    }
-    header .select {
-      width: 95%;
-    }
-    header .select-dropdown .select-btn {
-      width: 100%;
-    }
   }
+
+  header .select {
+      width: 95%;
+  }
+
+  header .select-dropdown .select-btn {
+      width: 100%;
+  }
+}

@@ -142,6 +142,33 @@ body{
     font-size: 24px;
 }
 
+/* ========== Footer ========== */
+  /* ========== Footer ========== */
+  footer {
+    background-color: #fff;
+    width: 100%;
+    padding: 15px 20px;
+  }
+  footer .footer-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .footer-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ad3b02;
+  }
+  footer span a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ad3b02;
+  }
+  .container-dashboard header {
+    display: flex;
+    justify-content: space-between;
+  }
 
 /* HEADER */
 header{
@@ -188,7 +215,7 @@ nav ul {
 }
 
 nav ul li {
-    display: flex;
+    /* display: flex; */
     margin-right: 25px;
 }
 
@@ -236,30 +263,42 @@ div.logojudul-kiri {
     margin-right: 10px;
     margin-top: auto;
 }
-/* ========== Footer ========== */
-  /* ========== Footer ========== */
-  footer {
-    background-color: #fff;
-    width: 100%;
-    padding: 15px 20px;
-  }
-  footer .footer-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  footer .footer-card h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #ad3b02;
-  }
-  footer span a {
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #ad3b02;
-  }
-  .container-dashboard header {
-    display: flex;
-    justify-content: space-between;
-  }
+
+#menu-icon{
+    display: none;
+    cursor: pointer;
+    color: white;
+    margin-right: 10px;
+    margin-top: auto;
+}
+
+@media (max-width: 1070px){
+    header {
+        padding: 10px 3%;
+        background: #AD3B02;
+    }
+    .menu-icon {
+        display: initial;
+    }
+    .navlist {
+        position: absolute;
+        top: -700px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background: #000;
+        transition: all ease .55s;
+        text-align: left;
+    }
+    .navlist a {
+        display: block;
+        font-size: 23px;
+        font-weight: 400;
+        margin: 0.8rem 1.8rem;
+        color: var(--second-color);
+    }
+    .navlist.open {
+        top: 100%;
+    }
+}

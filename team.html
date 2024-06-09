@@ -23,7 +23,7 @@
                 <h1>PIZZA PLACE SALES REPORT</h1>
             </div>
             <nav>
-                <ul>
+                <ul class="navlist">
                     <li><a href="home.html" onclick="loadPage('home.html')">Home</a></li>
                     <li><a href="index.html" onclick="loadPage('index.html')">Statistics</a></li>
                     <li><a href="team.html" onclick="loadPage('team.html')" style="color: #ffcc00;">About Us</a></li>
@@ -31,6 +31,9 @@
                         <div class="bx bx-log-out" id="logout"></div>
                     </a></li>
                 </ul>
+                <div class="menu-icon" id="menu-icon">
+                    <i class="bx bx-menu"></i>
+                </div>
             </nav>
         </header>
 
@@ -90,7 +93,7 @@
                     </div>
                 </div>
 
-                <!-- 3 -->
+                <!-- 3 --> 
                 <div class="card">
                     <div class="imgBx">
                         <img src="img/team/gabriel.png" alt="">
@@ -340,5 +343,10 @@
             </div>
         </footer>
     </main>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+        <!-- js file link -->
+        <script src="js/menu.js"></script>
+
     </body>
 </html>

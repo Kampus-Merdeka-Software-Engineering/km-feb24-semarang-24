@@ -10,6 +10,8 @@
         <!-- Link Icon -->
         <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/style.css">
+         <!-- LINK HEADER -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     </head>
 
     <body>
@@ -18,10 +20,14 @@
             <div class="logojudul-kiri">
                 <img class="logo" src="img/pizza.png" alt="Logo Pizza">
                 <h1>PIZZA PLACE SALES REPORT</h1>
-            </div> 
+            </div>
             <nav>
+                <input type="checkbox"id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
                 <ul>
-                    <li><a href="home.html" onclick="loadPage('home.html')">Home</a></li>
+                    <li><a class="active" href="home.html" onclick="loadPage('home.html')">Home</a></li>
                     <li><a href="index.html" onclick="loadPage('index.html')" style="color: #ffcc00;">Statistics</a></li>
                     <li><a href="team.html" onclick="loadPage('team.html')">About Us</a></li>
                     <li><a href="login.html">

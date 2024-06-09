@@ -46,7 +46,7 @@ body{
     position: relative;
     width: 300px;
     height: 400px;
-    margin: 20px;
+    margin: 0px;
     overflow: hidden;
     box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.455), inset 0 0 0 1000px rgb(221 110 11 / 26%);
     border-radius: 15px;
@@ -142,99 +142,155 @@ body{
 }
 
 
-/* HEADER */
+/* HEADER */ 
 header{
-    position:fixed;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: space-between;
-    background-color: #AD3B02;
-    width: 100%; 
-    top: 0; 
-    z-index: 1000; 
-    height: 100px;
-    padding: 0 20px;
-    box-sizing: border-box;
+  position:fixed;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  background-color:  #AD3B02;
+  width: 100%; 
+  top: 0; 
+  z-index: 1000; 
+  height: 100px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 header h1 {
-    color: #ffffff;
-    font-size: 25px;
-    margin-left: 20px;
-    padding-top: 20px;
-    margin-right: 0px;
-    white-space: nowrap; /* Hindari pemutusan teks saat layar terlalu kecil */
+  color: #ffffff;
+  font-size: 25px;
+  margin-left: 20px;
+  padding-top: 20px;
+  margin-right: 0px;
+  white-space: nowrap; /* Hindari pemutusan teks saat layar terlalu kecil */
 }
 
 header h1 {
-    color: #ffffff;
-    margin-left: 10px;
-    margin-top: 2px;
-    white-space: nowrap;
+  color: #ffffff;
+  margin-left: 10px;
+  margin-top: 2px;
+  white-space: nowrap;
 }
 
 nav {
-    padding: 37px 0 0 0;
-    margin: 0 0 0 300px;
+  padding: 37px 0 0 0;
+  margin: 0;
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 nav ul li {
-    display: flex;
-    margin-right: 25px;
+  display: flex;
+  margin-right: 25px;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 18px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 nav ul li a:hover {
-    color: #ffcc00;
+  color: #ffcc00;
 }
 
 div.team {
-    display: flex;
-    justify-content: space-between;
-    margin: -20px 20px 0 0;
-    
+  display: flex;
+  justify-content: space-between;
+  margin: -20px 20px 0 0;
+  
 }
 
 div.logojudul-kiri {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: 20px;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 20px;
 }
 
 .logo {
-    width: 100px;
-    height: 65px;
-    padding-left:20px ;
-    padding-top: 15px;
+  width: 100px;
+  height: 65px;
+  padding-left:20px ;
+  padding-top: 15px;
 }
 
 .profil {
-    width: 100px;
-    height:70px;
-    padding-top: -20px;
+  width: 100px;
+  height:70px;
+  padding-top: -20px;
 }
 
 #logout{
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
-    margin-right: 10px;
-    margin-top: auto;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  margin-right: 10px;
+  margin-top: auto;
 }
+
+/* TAMBAHAN HEADER */
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  /* line-height: 10px; */
+  margin-right: 10px;
+  /* margin-bottom: 50px; */
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+@media (max-width: 952px){
+  .logojudul-kiri{
+    font-size: 30px;
+    padding-left: 10px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+   ul{
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    background: #ba4104;
+    top: -100px;
+    left: 0;
+    text-align: center;
+    justify-content: space-between;
+    border-top: 1px solid white;
+  }
+  nav ul li{
+    display: block;
+    margin: 20px 0;
+    line-height: 10px;
+  }
+  nav ul li a{
+    font-size: 20px;
+    display: block;
+    padding: 20px;
+  }
+  #check:checked ~ ul{
+    top: 100px;
+  }
+}
+/* BATAS HEADER */
+
+
 .container-dashboard {
     margin-top: 110px;
     font-family: 'Poppins', sans-serif;

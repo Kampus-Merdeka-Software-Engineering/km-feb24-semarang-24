@@ -10,13 +10,7 @@
 
 /* Body */
 body{
-    /* background: url("../img/login/1.jpg"); */
     background-color: #DEE5FF;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,6 +117,9 @@ body{
 .btn-1{
     background: #AD3B02;
 }
+.btn-2{
+    color: #737373;
+}
 
 .btn:hover{
     opacity: 0.85;
@@ -208,7 +205,7 @@ body{
     display: flex;
     justify-content: right;
     gap: 5px;
-}
+} 
 
 .forgot-pass a{
     color: rgb(88, 85, 85);
@@ -252,6 +249,6 @@ body{
         display: none;
     }
     .col-2{
-        width: 100px;
+        width: 100%;
     }
 }

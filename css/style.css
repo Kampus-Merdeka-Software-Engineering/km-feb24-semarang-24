@@ -1,101 +1,240 @@
-.body{
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    margin: auto;
 }
+
+body{
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #DEE5FF;
+}
+
+.wrapper .title{
+    text-align: center;
+}
+
+.title h4{
+    display: inline-block;
+    padding: 20px;
+    color: #000000;
+    font-size: 50px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    word-spacing: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    text-transform: uppercase;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+}
+
+.wrapper .card_Container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.card_Container .card{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.455), inset 0 0 0 1000px rgb(221 110 11 / 26%);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgBx{
+    background-color: #e4e9f7 ;
+}
+.imgBx img{
+    width: 300px;
+    height: 350px;
+    justify-content: center;
+}
+
+.card .imgBx{
+    width: 100%;
+    height: 100%;
+}
+
+.card .content{
+    position: absolute;
+    bottom: -160px;
+    width: 100%;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(40px);
+    box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    transition: bottom 0.5s;
+    transition-delay: 0.7s;
+}
+
+.card:hover .content{
+    bottom: 0;
+    transition-delay: 0s;
+}
+
+.content .contentBx h3{
+    text-transform: uppercase;
+    color: #000000;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0 15px;
+    line-height: 1.1em;
+    transition: 0.5s;
+    transition-delay: 0.6s;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.card:hover .content .contentBx h3{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content .contentBx h3 span{
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: initial;
+}
+
+.content .sci{
+    position: relative;
+    bottom: 10px;
+    display: flex;
+}
+
+.content .sci li{
+    list-style: none;
+    margin: 0 10px;
+    transform: translateY(40px);
+    transition: 0.5s;
+    opacity: 0;
+    transition-delay: calc(0.2s * var(--i));
+}
+
+.card:hover .content .sci li{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.content .sci li a{
+    color: #000000;
+    font-size: 24px;
+}
+
+
 /* HEADER */
 header{
-  position:fixed;
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  justify-content: space-between;
-  background-color: #AD3B02;
-  width: 100%; 
-  top: 0; 
-  z-index: 1000; 
-  height: 100px;
-  padding: 0 20px;
-  box-sizing: border-box;
+    position:fixed;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    background-color: #AD3B02;
+    width: 100%; 
+    top: 0; 
+    z-index: 1000; 
+    height: 100px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 header h1 {
-  color: #ffffff;
-  font-size: 25px;
-  margin-left: 20px;
-  padding-top: 20px;
-  margin-right: 0px;
-  white-space: nowrap; /* Hindari pemutusan teks saat layar terlalu kecil */
+    color: #ffffff;
+    font-size: 25px;
+    margin-left: 20px;
+    padding-top: 20px;
+    margin-right: 0px;
+    white-space: nowrap; /* Hindari pemutusan teks saat layar terlalu kecil */
 }
 
 header h1 {
-  color: #ffffff;
-  margin-left: 10px;
-  margin-top: 8px;
-  white-space: nowrap;
+    color: #ffffff;
+    margin-left: 10px;
+    margin-top: 2px;
+    white-space: nowrap;
 }
 
 nav {
-  padding: 37px 0 0 0;
-  margin: 0;
+    padding: 37px 0 0 0;
+    margin: 0 0 0 300px;
 }
 
 nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 nav ul li {
-  display: flex;
-  margin-right: 25px;
+    display: flex;
+    margin-right: 25px;
 }
 
 nav ul li a {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 18px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 nav ul li a:hover {
-  color: #ffcc00;
+    color: #ffcc00;
 }
 
 div.team {
-  display: flex;
-  justify-content: space-between;
-  margin: -20px 20px 0 0;
-  
+    display: flex;
+    justify-content: space-between;
+    margin: -20px 20px 0 0;
+    
 }
 
 div.logojudul-kiri {
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20px;
 }
 
 .logo {
-  width: 100px;
-  height: 65px;
-  padding-left:20px ;
-  padding-top: 15px;
+    width: 100px;
+    height: 65px;
+    padding-left:20px ;
+    padding-top: 15px;
 }
 
 .profil {
-  width: 100px;
-  height:70px;
-  padding-top: -20px;
+    width: 100px;
+    height:70px;
+    padding-top: -20px;
 }
 
 #logout{
-  font-size: 30px;
-  cursor: pointer;
-  color: white;
-  margin-right: 10px;
-  margin-top: auto;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    margin-right: 10px;
+    margin-top: auto;
 }
-
 .container-dashboard {
     margin-top: 110px;
     font-family: 'Poppins', sans-serif;
@@ -158,6 +297,7 @@ div.logojudul-kiri {
     padding: 20px 15px 20px 90px;
   }
   
+  /* ========== Dashboard Header ========== */
   /* ========== Dashboard Header ========== */
   .container-dashboard header {
     display: flex;
@@ -508,7 +648,7 @@ div.dt-container .dt-paging .dt-paging-button.disabled:active {
 
 /* ========== Footer ========== */
 footer {
-  background-color: #F4D6CB;
+  background-color: #fff;
   width: 100%;
   padding: 15px 20px;
 }

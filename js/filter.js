@@ -634,7 +634,7 @@ function createMonthlyTrendChart(data) {
           ticks: {
             stepSize: 500,
             beginAtZero: false,
-            min: 3800,
+            min: 3500,
             max: 4500,
             color: tickColor,
             callback: function (value) {
@@ -949,8 +949,9 @@ function createTop5LeastSellingPizzaTypeChart(data) {
         },
         y: {
           beginAtZero: true,
+          max: 200, // Set the maximum value of the y-axis to 1000
           ticks: {
-            stepSize: 1,
+            stepSize: 100, // Adjust the step size to fit your data
             color: tickColor,
           },
           grid: {
@@ -984,6 +985,7 @@ function createTop5LeastSellingPizzaTypeChart(data) {
     plugins: [ChartDataLabels],
   });
 }
+
 
 //BEST SELLING
 function bestSellingPizzaTable(data) {

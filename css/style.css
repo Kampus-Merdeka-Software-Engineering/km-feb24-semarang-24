@@ -14,6 +14,109 @@ body{
     background: #DEE5FF;
 }
 
+/* CAPSTONE PROJECT */
+/* CAPSTONE PROJECT */
+.capstone {
+    display: flex;
+    padding-top: 40px;
+    justify-content: center;
+    margin-bottom: -85px;
+}
+
+.collapsible{
+    max-width: 100%;
+    overflow: hidden;
+    font-weight: 500;
+    margin-top: -30px;
+}
+
+.collapsible input{
+    display: none;
+
+}
+.collapsible label{
+    position: relative;
+    font-weight: bold;
+    font-size: 18px;
+    background: #ba4104;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1), 0 4px 11px 0 rgba(0, 0, 0, 0.225);
+    color: white;
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 15px;
+    padding-left: 40%;
+    border-radius: 4px;
+    z-index: 1;
+    
+}
+.collapsible label:after{
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 18px;
+    height: 18px;
+    transition: all 0.3s ease;
+}
+.collapsible input:checked + label::after {
+    transform: rotate(90deg);
+}
+.collapsible-text{
+    max-height: 100px;
+    overflow: hidden;
+    border-radius: 4px;
+    line-height: 1.4;
+    position: relative;
+    top: -100%;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+
+}
+.collapsible-text img{
+    height: 80%;
+    width: 80%;
+}
+.collapsible input:checked ~ .collapsible-text{
+    max-height: 10000px;
+    padding-bottom: 25px;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-right: 40px;
+    background: white;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1), 0 4px 11px 0 rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    top: 0;
+    margin-bottom: 115px;
+}
+.collapsible-text h2{
+    margin-bottom: 10px;
+    padding: 15px 15px 0;
+    color: #ba4104;
+}
+.collapsible-text p{
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+table.hypothesis{
+    border-collapse: collapse;
+}
+table.hypothesis, th, td {
+    border: 1px solid rgb(162, 156, 156);
+}
+th, td {
+    padding: 10px;
+}
+th {
+    background-color: #D65615;
+    color: white;
+}
+
+/* CAPSTONE PROJECT */
+/* CAPSTONE PROJECT */
+
 .wrapper .title{
     text-align: center;
 }
@@ -161,7 +264,7 @@ header h1 {
   color: #ffffff;
   font-size: 25px;
   margin-left: 20px;
-  padding-top: 20px;
+  padding-top: 22px;
   margin-right: 0px;
   white-space: nowrap; /* Hindari pemutusan teks saat layar terlalu kecil */
 }
@@ -213,6 +316,7 @@ div.logojudul-kiri {
   display: flex;
   justify-content: flex-start;
   margin-left: 20px;
+  margin-top: 10px
 }
 
 .logo {
@@ -356,7 +460,7 @@ div.logojudul-kiri {
   .container-dashboard {
     height: 100%;
     width: 100%;
-    padding: 20px 15px 20px 90px;
+    padding: 20px 80px 20px 90px;
   }
   
   /* ========== Dashboard Header ========== */
@@ -517,7 +621,7 @@ div.logojudul-kiri {
   }
   .analys-sales .sales-icon i {
     font-size: 2rem;
-    color: var(--text-color);
+    color: #FE7028;
   }
   .analys-sales .sales-text {
     display: flex;
@@ -665,7 +769,7 @@ table.dataTable {
 }
 
 table.dataTable thead tr {
-  background-color: #FE7028;
+  background-color: #AD3B02;
   color: #fff;
   text-align: center;
   font-size: 1.1rem;
@@ -710,7 +814,7 @@ div.dt-container .dt-paging .dt-paging-button.disabled:active {
 
 /* ========== Footer ========== */
 footer {
-  background-color: #fff;
+  background-color: #AD3B02;
   width: 100%;
   padding: 15px 20px;
 }
@@ -724,14 +828,14 @@ footer .footer-card {
 footer .footer-card h3 {
   font-size: 1rem;
   font-weight: 700;
-  color: #AD3B02;
+  color: #fff;
 }
 
 footer span a {
   text-decoration: none;
   font-size: 1rem;
   font-weight: 700;
-  color: #AD3B02;
+  color: #fff;
 }
 
 @media screen and (max-width: 1350px) {
@@ -773,6 +877,7 @@ footer span a {
   }
 
   .dash-header {
+      display: flex;
       padding-top: 50px;
   }
 

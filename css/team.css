@@ -148,7 +148,7 @@ body{
 /* ========== Footer ========== */
   /* ========== Footer ========== */
   footer {
-    background-color: #fff;
+    background-color: #AD3B02;
     width: 100%;
     padding: 15px 20px;
   }
@@ -160,13 +160,13 @@ body{
   footer .footer-card h3 {
     font-size: 1rem;
     font-weight: 700;
-    color: #ad3b02;
+    color: #fff;
   }
   footer span a {
     text-decoration: none;
     font-size: 1rem;
     font-weight: 700;
-    color: #ad3b02;
+    color: #fff;
   }
   .container-dashboard header {
     display: flex;
@@ -193,7 +193,7 @@ header h1 {
     color: #ffffff;
     font-size: 25px;
     margin-left: 20px;
-    padding-top: 20px;
+    padding-top: 22px;
     margin-right: 0px;
     white-space: nowrap; /* Hindari pemutusan teks saat layar terlalu kecil */
 }
@@ -245,6 +245,7 @@ div.logojudul-kiri {
     display: flex;
     justify-content: flex-start;
     margin-left: 20px;
+    margin-top: 10px;
 }
 
 .logo {

@@ -283,7 +283,7 @@ header h1 {
     color: #ffffff;
     font-size: 25px;
     margin-left: 20px;
-    padding-top: 20px;
+    padding-top: 22px;
     margin-right: 0px;
     white-space: nowrap; /* Hindari pemutusan teks saat layar terlalu kecil */
 }
@@ -335,6 +335,7 @@ div.logojudul-kiri {
     display: flex;
     justify-content: flex-start;
     margin-left: 20px;
+    margin-top: 10px
 }
 
 .logo {

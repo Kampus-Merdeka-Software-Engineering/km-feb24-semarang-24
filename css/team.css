@@ -46,7 +46,7 @@ body{
 .card_Container .card{
     position: relative;
     width: 300px;
-    height: 400px;
+    height: 350px;
     margin: 20px;
     overflow: hidden;
     box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.455), inset 0 0 0 1000px rgb(221 110 11 / 26%);
@@ -56,12 +56,12 @@ body{
     align-items: center;
 }
 .imgBx{
-    background-color: #e4e9f7 ;
+    background-color: #cad6f7 ;
 }
 .imgBx img{
-    width: 300px;
-    height: 350px;
-    justify-content: center;
+    width: 250px;
+    height: 300px;
+    margin-left: 20px;
 }
 
 .card .imgBx{
@@ -140,6 +140,9 @@ body{
 .content .sci dt a{
     color: #000000;
     font-size: 24px;
+}
+.content .sci dt a:hover{
+    color: white;
 }
 
 /* ========== Footer ========== */

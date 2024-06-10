@@ -5,7 +5,7 @@
 | Yusnia Husniyati  | Project Leader                              |
 | Cisa Nada S       | Data Visualization dan Front End Engineer  |
 | Gabriel Destino S | Data Cleaning dan Front End Engineer        |
-| Sri Yusrina       | Data Visualization dan Front End Engineer  |
+| Sri Yusrina Cantik    | Data Visualization dan Front End Engineer  |
 | Sabna Devi K      | Data Cleaning dan Front End Engineer        |
 | Allegra Guruh B   | Data Analysis dan Deployment                |
 | Vitta Margaret S  | Data Analysis dan Pitch Deck                |

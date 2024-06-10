@@ -349,6 +349,9 @@ div.logojudul-kiri {
     height:70px;
     padding-top: -20px;
 }
+.checkbtn i:hover{
+    color:#ffcc00;
+}
 
 #logout{
     font-size: 30px;
@@ -356,6 +359,9 @@ div.logojudul-kiri {
     color: white;
     margin-right: 10px;
     margin-top: auto;
+}
+#logout:hover{
+    color:#ffcc00;
 }
 
 /* TAMBAHAN HEADER */

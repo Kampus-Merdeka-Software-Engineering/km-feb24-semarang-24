@@ -192,8 +192,11 @@ margin-bottom: 30px;
 .main{
     display: flex;
     flex-wrap: wrap;
+
+    justify-content: center;
 }
 .footer{
+    align-items: center;
     padding: 10px 0;
 }
 .col{

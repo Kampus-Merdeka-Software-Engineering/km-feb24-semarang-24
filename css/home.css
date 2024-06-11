@@ -395,6 +395,10 @@ div.logojudul-kiri {
     .checkbtn{
       display: block;
     }
+    .col{
+        height: 100%;
+        width: 100%;
+    }
      ul{
       position: fixed;
       width: 100%;

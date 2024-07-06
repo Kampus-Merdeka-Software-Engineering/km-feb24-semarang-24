@@ -1,8 +1,12 @@
 # **Section Semarang - Team 24**
 
-- [Data Visualization](https://lookerstudio.google.com/reporting/a24448db-585c-4e4e-9227-edeb3846c920)
-- [Deck](https://drive.google.com/file/d/1kay7Vhg0vNFDoluHys2m4XcKjvxwrp0U/view?usp=sharing)
-- [Capstone Project Checklist](https://docs.google.com/spreadsheets/d/1YD_Pp5ZU7vPA-0C6nrdUpvNgsHSs2XfuIj_-VxTGKrw/edit?gid=1726187797#gid=1726187797)
+- [Link Deployment](https://km-feb24-semarang-24.vercel.app/)
+
+- [Project Checklist](https://docs.google.com/spreadsheets/d/1YD_Pp5ZU7vPA-0C6nrdUpvNgsHSs2XfuIj_-VxTGKrw/edit?gid=1726187797#gid=1726187797)
+- [Draft Laporan](https://docs.google.com/document/d/1exCZBFoEn9xw94fiPqzgSOdP_88MAgS3HFVfXglH2g8/edit)
+- [Data Visualization - Looker Studio](https://lookerstudio.google.com/reporting/a24448db-585c-4e4e-9227-edeb3846c920)
+- [Deck Presentation](https://drive.google.com/file/d/1kay7Vhg0vNFDoluHys2m4XcKjvxwrp0U/view?usp=sharing)
+
 
 
 | Nama               | Peran                                       |

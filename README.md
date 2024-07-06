@@ -1,4 +1,9 @@
-# **Semarang Team 24👋🔥**
+# **Section Semarang - Team 24**
+
+- [Data Visualization](https://lookerstudio.google.com/reporting/a24448db-585c-4e4e-9227-edeb3846c920)
+- [Deck](https://drive.google.com/file/d/1kay7Vhg0vNFDoluHys2m4XcKjvxwrp0U/view?usp=sharing)
+- [Capstone Project Checklist](https://docs.google.com/spreadsheets/d/1YD_Pp5ZU7vPA-0C6nrdUpvNgsHSs2XfuIj_-VxTGKrw/edit?gid=1726187797#gid=1726187797)
+
 
 | Nama               | Peran                                       |
 |--------------------|---------------------------------------------|
